@@ -1,0 +1,129 @@
+.main {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    padding-bottom: 5rem;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.title {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1;
+    color: var(--text-primary);
+}
+
+.sectionTitle {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.text strong {
+    color: var(--text-primary);
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.card {
+    background: var(--bg-surface);
+    padding: 3rem;
+    border: 1px solid var(--border-subtle);
+}
+
+.cardLabel {
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.cardHeading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.cardText {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.valuesSection {
+    margin-top: 8rem;
+}
+
+.valuesTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.valueItem {
+    padding: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    position: relative;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.valueItem h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.valueItem p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .grid2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

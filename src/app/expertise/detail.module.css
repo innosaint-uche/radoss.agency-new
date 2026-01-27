@@ -1,0 +1,95 @@
+.hero {
+    padding: 18rem 0 8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    font-family: var(--font-serif);
+    font-style: italic;
+    max-width: 800px;
+}
+
+.introSection {
+    padding: 8rem 0;
+    max-width: 900px;
+}
+
+.introText {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.detailList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.detailItem {
+    padding: 6rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+}
+
+.detailHeader {
+    position: sticky;
+    top: 8rem;
+}
+
+.detailTitle {
+    font-size: 2rem;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+}
+
+.detailDesc {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+}
+
+.bulletList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.bulletItem {
+    color: var(--text-muted);
+    padding-left: 2rem;
+    position: relative;
+}
+
+.bulletItem::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+}
+
+.bulletItem strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 968px) {
+    .detailItem {
+        grid-template-columns: 1fr;
+    }
+
+    .detailHeader {
+        position: static;
+    }
+}

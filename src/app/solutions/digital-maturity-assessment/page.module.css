@@ -1,0 +1,220 @@
+.toolWrapper {
+    background-color: #0F172A;
+    min-height: 100vh;
+    color: #F8FAFC;
+    font-family: 'Manrope', sans-serif;
+}
+
+.gradientHero {
+    background: radial-gradient(circle at top right, rgba(255, 215, 0, 0.1), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.15), transparent 40%),
+        #0F172A;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlightGold {
+    color: #FFD700;
+}
+
+.heroSubtitle {
+    font-size: 1.25rem;
+    color: #CBD5E1;
+    max-width: 700px;
+    margin: 1.5rem auto 2.5rem;
+    line-height: 1.6;
+}
+
+.heroButton {
+    background: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
+    color: #0F172A;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.heroButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(255, 215, 0, 0.4);
+}
+
+.pageContent {
+    padding: 4rem 0;
+}
+
+.contentSection {
+    margin-bottom: 4rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.contentSection h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #F8FAFC;
+    margin-bottom: 1.5rem;
+}
+
+.contentSection p {
+    color: #CBD5E1;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #E2E8F0;
+}
+
+.list li::before {
+    content: "•";
+    color: #FFD700;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Quiz Styles */
+.quizContainer {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.inputLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #94A3B8;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.inputField {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: #F8FAFC;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.inputField:focus {
+    outline: none;
+    border-color: #FFD700;
+}
+
+.progressBarContainer {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background: #FFD700;
+    transition: width 0.4s ease;
+}
+
+.questionCard {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.optionLabel {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #E2E8F0;
+}
+
+.optionLabel:hover {
+    background: rgba(255, 215, 0, 0.05);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.selectedOption {
+    background: rgba(255, 215, 0, 0.15) !important;
+    border-color: #FFD700 !important;
+    color: #FFD700;
+}
+
+.navButton {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #F8FAFC;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navButton:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #FFD700;
+}
+
+.navButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.resultBox {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .contentSection h2 {
+        font-size: 2rem;
+    }
+
+    .quizContainer {
+        padding: 1.5rem;
+    }
+}

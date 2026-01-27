@@ -1,0 +1,104 @@
+.main {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: var(--bg-body);
+}
+
+.header {
+    padding-bottom: 5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.title {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1;
+    color: var(--text-primary);
+}
+
+.bentoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.gridItem {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+    transition: all 0.3s ease;
+}
+
+.gridItem:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    background: var(--bg-card);
+}
+
+.itemMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.tagPill {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--border-subtle);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius);
+    color: var(--text-secondary);
+}
+
+.itemTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.itemDesc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.linkArrow {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+    .bentoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .gridItem {
+        min-height: 300px;
+    }
+}

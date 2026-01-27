@@ -1,0 +1,98 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    /* Reduced from 120px */
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.5s var(--ease-expo);
+    border-bottom: 1px solid transparent;
+    /* Prepare for border transition */
+}
+
+.scrolled {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    height: 80px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    font-size: 2rem;
+    /* Increased from 1.5rem */
+    /* Equivalent to text-2xl/3xl */
+    font-weight: 800;
+    /* Increased to Extra Bold */
+    color: var(--logo-text);
+    letter-spacing: -0.03em;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logoDot {
+    color: var(--accent-punctuation);
+}
+
+@media (min-width: 768px) {
+    .logo {
+        font-size: 1.875rem;
+        /* text-3xl */
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    /* Center items vertically */
+    gap: 2rem;
+}
+
+.navLink {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    /* Increase touch target slightly */
+}
+
+.navLink:hover {
+    color: var(--text-primary);
+}
+
+.divider {
+    color: var(--border-light);
+    font-weight: 100;
+}
+
+.menuBtn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .menuBtn {
+        display: block;
+    }
+}

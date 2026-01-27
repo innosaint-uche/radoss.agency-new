@@ -1,0 +1,144 @@
+.container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    animation: rotateWhole 60s linear infinite;
+    /* Center in parent */
+    margin: 0 auto;
+}
+
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+
+    /* DEFAULT (DARK MODE) STYLES */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(71, 69, 214, 0.1);
+    /* Subtle Blue Glow */
+    mix-blend-mode: screen;
+}
+
+.center {
+    border-color: rgba(255, 217, 3, 0.2);
+    /* Gold Hint */
+    z-index: 10;
+}
+
+/* ORBIT ANIMATIONS */
+.c1 {
+    animation: orbit1 12s ease-in-out infinite alternate;
+}
+
+.c2 {
+    animation: orbit2 12s ease-in-out infinite alternate;
+}
+
+.c3 {
+    animation: orbit3 12s ease-in-out infinite alternate;
+}
+
+.c4 {
+    animation: orbit4 12s ease-in-out infinite alternate;
+}
+
+.c5 {
+    animation: orbit5 12s ease-in-out infinite alternate;
+}
+
+.c6 {
+    animation: orbit6 12s ease-in-out infinite alternate;
+}
+
+/* THEME: LIGHT MODE OVERRIDES 
+   We target the data-theme attribute on the HTML element.
+   Using :global selector pattern for theme context.
+*/
+:global([data-theme='light']) .circle {
+    border: 1px solid rgba(71, 69, 214, 0.15);
+    /* Blue Border */
+    box-shadow: none;
+    /* No glow on white */
+    mix-blend-mode: multiply;
+    /* Multiply for better intersection on white */
+}
+
+:global([data-theme='light']) .center {
+    border-color: rgba(220, 179, 0, 0.3);
+    /* Darker Gold for visibility */
+}
+
+@keyframes rotateWhole {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit1 {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(0, -100px);
+    }
+}
+
+@keyframes orbit2 {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(86.6px, -50px);
+    }
+}
+
+@keyframes orbit3 {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(86.6px, 50px);
+    }
+}
+
+@keyframes orbit4 {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(0, 100px);
+    }
+}
+
+@keyframes orbit5 {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(-86.6px, 50px);
+    }
+}
+
+@keyframes orbit6 {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(-86.6px, -50px);
+    }
+}

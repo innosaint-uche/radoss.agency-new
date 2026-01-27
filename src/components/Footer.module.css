@@ -1,0 +1,101 @@
+.footer {
+    padding: 5rem 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-body);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.brand {
+    max-width: 300px;
+}
+
+.logo {
+    display: block;
+    font-size: 2.5rem;
+    /* Increased from 1.5rem */
+    /* Equivalent to text-2xl/3xl */
+    font-weight: 800;
+    /* Extra bold */
+    color: var(--logo-text);
+    transition: opacity 0.3s ease, color 0.3s ease;
+    letter-spacing: -0.03em;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logoDot {
+    color: var(--accent-punctuation);
+}
+
+.socialIcons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.socialLink {
+    color: var(--text-secondary);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialLink:hover {
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.tagline {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.links {
+    display: flex;
+    gap: 6rem;
+}
+
+.column h4 {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+}
+
+.column a {
+    display: block;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.column a:hover {
+    color: var(--color-gold);
+}
+
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .links {
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+}
