@@ -21,6 +21,14 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'cdn.worldvectorlogo.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'beyondlimits.global'
+            },
+            {
+                protocol: 'https',
+                hostname: 'miva-university.s3.eu-west-2.amazonaws.com'
             }
         ],
     },
