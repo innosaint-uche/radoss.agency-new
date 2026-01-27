@@ -1,10 +1,10 @@
 "use client";
 import styles from './page.module.css';
-import InteractiveBackground from '@/components/InteractiveBackground';
-import { Section } from '@/components/Section';
-import { Reveal } from '@/components/Reveal';
+import InteractiveBackground from '../../components/InteractiveBackground';
+import { Section } from '../../components/Section';
+import { Reveal } from '../../components/Reveal';
 
-import SchemaMarkup from '@/components/SchemaMarkup';
+import SchemaMarkup from '../../components/SchemaMarkup';
 
 export default function About() {
     return (

@@ -1,8 +1,8 @@
 "use client";
 import styles from './page.module.css';
-import InteractiveBackground from '@/components/InteractiveBackground';
-import { Section } from '@/components/Section';
-import { Reveal } from '@/components/Reveal';
+import InteractiveBackground from '../../components/InteractiveBackground';
+import { Section } from '../../components/Section';
+import { Reveal } from '../../components/Reveal';
 
 const approaches = [
     {

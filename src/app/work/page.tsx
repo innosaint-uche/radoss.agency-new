@@ -1,10 +1,10 @@
 "use client";
 import Image from 'next/image';
 import styles from './page.module.css';
-import InteractiveBackground from '@/components/InteractiveBackground';
+import InteractiveBackground from '../../components/InteractiveBackground';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Reveal } from '@/components/Reveal';
-import SchemaMarkup from '@/components/SchemaMarkup';
+import { Reveal } from '../../components/Reveal';
+import SchemaMarkup from '../../components/SchemaMarkup';
 import { useState } from 'react';
 
 interface Project {

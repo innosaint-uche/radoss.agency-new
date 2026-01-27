@@ -1,6 +1,6 @@
 import styles from './page.module.css';
 
-import SchemaMarkup from '@/components/SchemaMarkup';
+import SchemaMarkup from '../../components/SchemaMarkup';
 
 export default function Contact() {
     return (
