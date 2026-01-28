@@ -86,14 +86,53 @@
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    z-index: 1001;
 }
 
 @media (max-width: 768px) {
     .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg-body);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1000;
+    }
+
+    .navOpen {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navLink {
+        font-size: 1.25rem;
+        letter-spacing: 0.15em;
+    }
+
+    .divider {
         display: none;
     }
 
     .menuBtn {
         display: block;
+    }
+
+    .menuOpen {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
     }
 }
