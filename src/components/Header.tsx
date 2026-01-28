@@ -1,9 +1,8 @@
 "use client";
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styles from './Header.module.css';
-import ThemeToggle from './ThemeToggle'; // Toggle Button
+import ThemeToggle from './ThemeToggle';
 
 const navItems = [
     { label: 'Expertise', href: '/expertise' },
@@ -27,14 +26,7 @@ export default function Header() {
         <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
             <div className={`container ${styles.container}`}>
                 <Link href="/" className={styles.logo}>
-                    <Image
-                        src="/radoss-logo.jpg"
-                        alt="Radoss Agency - Connecting Dots. Crafting Growth."
-                        width={120}
-                        height={40}
-                        priority
-                        style={{ objectFit: 'contain' }}
-                    />
+                    Radoss<span className={styles.logoDot}>.</span>
                 </Link>
                 <nav className={styles.nav}>
                     {navItems.map((item) => (

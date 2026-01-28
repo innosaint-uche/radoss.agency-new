@@ -2,9 +2,8 @@
 .heroSection {
     padding: 8rem 0 6rem;
     border-bottom: 1px solid var(--border-subtle);
-    background: var(--bg-body);
+    /* No background - inherits starry/transparent */
     overflow: hidden;
-    /* For rotating element */
 }
 
 .heroGrid {
@@ -168,6 +167,10 @@
     color: white !important;
 }
 
+.blueCard .cardNum {
+    color: var(--brand-blue);
+}
+
 .goldCard:hover {
     background: var(--brand-gold);
     border-color: var(--brand-gold);
@@ -177,6 +180,18 @@
     color: black !important;
 }
 
+.sandCard:hover {
+    background: var(--brand-sand);
+    border-color: var(--brand-sand);
+}
+
+.sandCard:hover * {
+    color: #1a1a1a !important;
+}
+
+.sandCard .cardNum {
+    color: var(--brand-sand-dark);
+}
 
 .cardHeader h3 {
     font-family: var(--font-body);

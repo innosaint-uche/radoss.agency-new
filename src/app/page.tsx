@@ -170,7 +170,7 @@ export default function Home() {
 
             {/* Digital Maturity */}
             <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
-              <Link href="/solutions/digital-maturity-assessment" className={styles.bentoCard}>
+              <Link href="/solutions/digital-maturity-assessment" className={`${styles.bentoCard} ${styles.sandCard}`}>
                 <div className={styles.cardHeader}>
                   <span className={styles.cardNum}>04</span>
                   <h3>Digital Maturity</h3>

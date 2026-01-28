@@ -1,9 +1,15 @@
 :root {
-  /* VANGUARD PALETTE */
+  /* VANGUARD PALETTE - Primary */
   --brand-gold: #ffd903;
   --brand-blue: #4745d6;
   --brand-white: #ffffff;
-  --brand-grey: #F4F5F7;
+
+  /* VANGUARD PALETTE - Secondary */
+  --brand-grey: #6B7280;
+  --brand-grey-light: #F4F5F7;
+  --brand-sand: #E8DFD0;
+  --brand-sand-dark: #C4B8A5;
+
 
   /* DARK MODE (Professional Base) */
   --bg-body: #020408;
@@ -107,39 +113,46 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* UNIVERSAL HEADING TYPOGRAPHY */
 h1,
 h2,
 h3 {
-  font-family: var(--font-header);
-  font-weight: 700;
+  font-family: var(--font-heading);
   color: var(--text-primary);
   line-height: 1.1;
-  letter-spacing: -0.04em;
+}
+
+/* H1: Inter Thin/Light - Primary Titles, Hero sections */
+h1 {
+  font-weight: 300;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+/* H2: Inter Bold - Major Section Headers */
+h2 {
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+/* H3: Inter Medium - Sub-Headings */
+h3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
 h4,
 h5,
 h6 {
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  /* Tight business tracking */
 }
 
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  letter-spacing: -0.03em;
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-}
-
-h3 {
-  font-size: 1.5rem;
-}
 
 h4 {
   font-size: 0.85rem;

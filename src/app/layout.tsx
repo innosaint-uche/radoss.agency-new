@@ -26,7 +26,16 @@ const manrope = Manrope({
 export const metadata: Metadata = {
     title: "Radoss Agency | Connecting Dots. Crafting Growth.",
     description: "A premium digital agency specializing in performance marketing, digital transformation, and custom software solutions.",
+    icons: {
+        icon: [
+            { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+            { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+            { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
+        ],
+        apple: '/apple-touch-icon.png',
+    },
 };
+
 
 export default function RootLayout({
     children,
