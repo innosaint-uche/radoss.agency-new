@@ -1,8 +1,8 @@
 "use client";
 import Link from 'next/link';
 import styles from './page.module.css';
-import { Reveal } from '../components/Reveal';
-import FlowerOfLife from '../components/FlowerOfLife';
+import { Reveal } from '@/components/Reveal';
+import FlowerOfLife from '@/components/FlowerOfLife';
 import { motion } from 'framer-motion';
 
 export default function Home() {

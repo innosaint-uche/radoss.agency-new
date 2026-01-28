@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import SmoothScroll from "../components/SmoothScroll";
-import { ThemeProvider } from "../components/ThemeProvider";
-import InteractiveBackground from "../components/InteractiveBackground";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import InteractiveBackground from "@/components/InteractiveBackground";
 import "./globals.css";
 
 const playfair = Playfair_Display({
