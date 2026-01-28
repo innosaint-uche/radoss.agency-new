@@ -1,9 +1,30 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from '../detail.module.css';
+import { SolutionCTA } from '../../../components/SolutionCTA';
+import SchemaMarkup from '../../../components/SchemaMarkup';
+
+export const metadata: Metadata = {
+    title: "Business & Digital Transformation | Radoss Agency",
+    description: "Future-proof your operations. We partner with leaders to align marketing, sales, and technology for sustainable digital growth.",
+    keywords: ["digital transformation", "business strategy consulting", "martech stack audit", "sales alignment", "change management"],
+};
 
 export default function BusinessTransformation() {
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Business & Digital Transformation",
+        "provider": {
+            "@type": "Organization",
+            "name": "Radoss Agency"
+        },
+        "description": "Strategic business alignment and digital modernization services."
+    };
+
     return (
         <>
+            <SchemaMarkup data={schemaData} />
             <section className={styles.hero}>
                 <div className="container">
                     <Link href="/expertise" style={{ fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '2rem', display: 'inline-block' }}>← Return to Expertise</Link>
@@ -65,6 +86,13 @@ export default function BusinessTransformation() {
                 </div>
 
             </div>
+
+            <section className="container" style={{ paddingBottom: '100px' }}>
+                <SolutionCTA
+                    title="Engineer Your Evolution"
+                    description="Don't just adapt to the digital age—lead it. Partner with us to modernize your operations and unlock new growth channels."
+                />
+            </section>
         </>
     );
 }

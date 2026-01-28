@@ -1,9 +1,30 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from '../detail.module.css';
+import { SolutionCTA } from '../../../components/SolutionCTA';
+import SchemaMarkup from '../../../components/SchemaMarkup';
+
+export const metadata: Metadata = {
+    title: "Digital & Performance Marketing | Radoss Agency",
+    description: "Dominate the digital landscape. Data-driven SEO, PPC, and Social Media strategies designed for measurable business impact.",
+    keywords: ["digital marketing", "performance marketing", "SEO strategy", "PPC management", "social media growth"],
+};
 
 export default function DigitalMarketing() {
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Digital & Performance Marketing",
+        "provider": {
+            "@type": "Organization",
+            "name": "Radoss Agency"
+        },
+        "description": "Full-funnel digital marketing services focused on ROI and performance."
+    };
+
     return (
         <>
+            <SchemaMarkup data={schemaData} />
             <section className={styles.hero}>
                 <div className="container">
                     <Link href="/expertise" style={{ fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '2rem', display: 'inline-block' }}>← Return to Expertise</Link>
@@ -70,6 +91,13 @@ export default function DigitalMarketing() {
                 </div>
 
             </div>
+
+            <section className="container" style={{ paddingBottom: '100px' }}>
+                <SolutionCTA
+                    title="Drive Measurable Growth"
+                    description="Our performance-driven approach ensures every marketing dollar works harder for your business."
+                />
+            </section>
         </>
     );
 }

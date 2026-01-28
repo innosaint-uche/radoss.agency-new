@@ -28,8 +28,8 @@ export default function RootLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <body className={`${playfair.variable} ${manrope.variable}`}>
+        <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${manrope.variable}`}>
+            <body>
                 <ThemeProvider>
                     <SmoothScroll>
                         <InteractiveBackground />

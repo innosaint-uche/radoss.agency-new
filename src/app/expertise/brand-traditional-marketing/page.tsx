@@ -1,9 +1,32 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from '../detail.module.css';
+import { SolutionCTA } from '../../../components/SolutionCTA';
+import SchemaMarkup from '../../../components/SchemaMarkup';
+
+export const metadata: Metadata = {
+    title: "Brand & Traditional Marketing | Radoss Agency",
+    description: "Build a brand that resonates. We combine strategic positioning with multi-channel traditional marketing to create lasting impact.",
+    keywords: ["brand strategy", "traditional marketing", "ATL advertising", "BTL activations", "brand identity"],
+};
 
 export default function BrandMarketing() {
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Brand & Traditional Marketing",
+        "provider": {
+            "@type": "Organization",
+            "name": "Radoss Agency",
+            "url": "https://radoss.agency"
+        },
+        "description": "Strategic brand identity and traditional marketing services including ATL/BTL activations.",
+        "areaServed": "Global"
+    };
+
     return (
         <>
+            <SchemaMarkup data={schemaData} />
             <section className={styles.hero}>
                 <div className="container">
                     <Link href="/expertise" style={{ fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '2rem', display: 'inline-block' }}>← Return to Expertise</Link>
@@ -64,6 +87,13 @@ export default function BrandMarketing() {
                 </div>
 
             </div>
+
+            <section className="container" style={{ paddingBottom: '100px' }}>
+                <SolutionCTA
+                    title="Elevate Your Brand Presence"
+                    description="From strategy to activation, we help you build a brand that commands attention and inspires loyalty."
+                />
+            </section>
         </>
     );
 }

@@ -29,6 +29,7 @@
 
 .logo {
     display: block;
+    font-family: var(--font-header);
     font-size: 2rem;
     /* Increased from 1.5rem */
     /* Equivalent to text-2xl/3xl */
@@ -62,10 +63,11 @@
 }
 
 .navLink {
-    font-family: var(--font-body);
+    font-family: var(--font-header);
     text-transform: uppercase;
     font-size: 0.75rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
+    font-weight: 500;
     color: var(--text-secondary);
     transition: color 0.3s ease;
     padding: 0.5rem 0;

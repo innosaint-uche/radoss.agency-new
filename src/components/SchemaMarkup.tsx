@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface SchemaMarkupProps {
-    data: Record<string, any>;
+    data: Record<string, unknown>;
 }
 
 export default function SchemaMarkup({ data }: SchemaMarkupProps) {

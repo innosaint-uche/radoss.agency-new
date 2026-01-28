@@ -1,12 +1,37 @@
 import type { Metadata } from 'next';
 import { ServiceHero, FeatureGrid } from '../../../components/ServiceComponents';
 import SchemaMarkup from '../../../components/SchemaMarkup';
-import { Reveal } from '../../../components/Reveal';
-import Link from 'next/link';
+import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
     title: "Radoss Digital | High-ROI Performance Marketing Agency",
     description: "Data-driven performance marketing services. PPC, SEO, and Programmatic advertising that delivers measurable growth for ambitious brands.",
+    keywords: ["performance marketing agency", "PPC management", "ROI driven marketing", "programmatic advertising", "digital growth agency"],
+    alternates: {
+        canonical: "https://radoss.agency/solutions/radoss-digital",
+    },
+    openGraph: {
+        title: "Radoss Digital | High-ROI Performance Marketing Agency",
+        description: "Data-driven performance marketing services. PPC, SEO, and Programmatic advertising that delivers measurable growth.",
+        url: "https://radoss.agency/solutions/radoss-digital",
+        siteName: "Radoss Agency",
+        images: [
+            {
+                url: "/images/solutions/radoss-digital-og.png",
+                width: 1200,
+                height: 630,
+                alt: "Radoss Digital Performance Marketing",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Radoss Digital | High-ROI Performance Marketing Agency",
+        description: "Data-driven performance marketing services that deliver measurable growth.",
+        images: ["/images/solutions/radoss-digital-og.png"],
+    },
 };
 
 export default function RadossDigitalPage() {
@@ -61,17 +86,15 @@ export default function RadossDigitalPage() {
             <section className="container" style={{ paddingBottom: '100px' }}>
                 <FeatureGrid features={features} />
 
-                <div style={{ marginTop: '100px', textAlign: 'center' }}>
-                    <Reveal>
-                        <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Ready to Scale?</h3>
-                        <p style={{ maxWidth: '600px', margin: '0 auto 2rem', color: 'var(--text-secondary)' }}>
-                            Partner with a team that treats your budget like their own.
-                        </p>
-                        <a href="https://radossdigital.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 3rem' }}>
-                            Visit Radoss Digital
-                        </a>
-                    </Reveal>
-                </div>
+                <SolutionCTA
+                    title="Ready to Scale?"
+                    description="Partner with a team that treats your budget like their own."
+                    mainCTA={{
+                        label: "Visit Radoss Digital",
+                        href: "https://radossdigital.com",
+                        external: true
+                    }}
+                />
             </section>
         </>
     );

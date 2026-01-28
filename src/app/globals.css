@@ -16,8 +16,8 @@
   /* Cool Grey */
   --text-tertiary: #4B5563;
 
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-focus: rgba(255, 255, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-focus: rgba(255, 255, 255, 0.12);
 
   /* ACCENTS */
   --accent-primary: var(--brand-gold);
@@ -34,8 +34,14 @@
   --particle-secondary: 71, 69, 214;
   /* Blue */
 
-  /* TYPOGRAPHY - All Sans for Tech/Business */
+  /* TYPOGRAPHY */
   --font-main: var(--font-manrope), system-ui, sans-serif;
+  --font-header: var(--font-playfair), serif;
+  --font-body: var(--font-manrope), system-ui, sans-serif;
+
+  /* GLASSMORPHISM */
+  --bg-glass: rgba(2, 4, 8, 0.7);
+  --border-light: rgba(255, 255, 255, 0.08);
 
   /* SPACING - Swiss Grid */
   --gap: 1px;
@@ -45,6 +51,7 @@
 
   /* ANIMATION */
   --ease-business: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 [data-theme='light'] {
@@ -52,6 +59,8 @@
   --bg-body: #ffffff;
   --bg-surface: #F9FAFB;
   --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --border-light: rgba(0, 0, 0, 0.08);
 
   --text-primary: #111827;
   --text-secondary: #4B5563;
@@ -84,7 +93,7 @@
 body {
   background-color: var(--bg-body);
   color: var(--text-primary);
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   font-size: 15px;
   /* Precise size */
   line-height: 1.6;
@@ -95,7 +104,14 @@ body {
 
 h1,
 h2,
-h3,
+h3 {
+  font-family: var(--font-header);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
 h4,
 h5,
 h6 {

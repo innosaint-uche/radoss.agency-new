@@ -11,8 +11,8 @@
 
 .subtitle {
     font-size: 1.5rem;
-    color: var(--color-gold);
-    font-family: var(--font-serif);
+    color: var(--accent-primary);
+    font-family: var(--font-header);
     font-style: italic;
     max-width: 800px;
 }
@@ -50,7 +50,7 @@
 .detailTitle {
     font-size: 2rem;
     color: var(--text-primary);
-    font-family: var(--font-serif);
+    font-family: var(--font-header);
 }
 
 .detailDesc {
@@ -75,7 +75,7 @@
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--color-gold);
+    color: var(--accent-primary);
 }
 
 .bulletItem strong {

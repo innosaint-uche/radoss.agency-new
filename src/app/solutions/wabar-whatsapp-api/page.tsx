@@ -1,12 +1,37 @@
 import type { Metadata } from 'next';
 import { ServiceHero, FeatureGrid } from '../../../components/ServiceComponents';
 import SchemaMarkup from '../../../components/SchemaMarkup';
-import { Reveal } from '../../../components/Reveal';
-import Link from 'next/link';
+import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
     title: "WABAR by Radoss | Enterprise WhatsApp Business API",
     description: "Official WhatsApp Business API solution. Automate customer support, drive sales, and integrate chatbots with WABAR by Radoss.",
+    keywords: ["whatsapp business api nigeria", "whatsapp chatbot for business", "official meta whatsapp api", "wabar whatsapp solution", "conversational commerce"],
+    alternates: {
+        canonical: "https://radoss.agency/solutions/wabar-whatsapp-api",
+    },
+    openGraph: {
+        title: "WABAR by Radoss | Enterprise WhatsApp Business API",
+        description: "Official WhatsApp Business API solution. Automate, scale, and sell on WhatsApp.",
+        url: "https://radoss.agency/solutions/wabar-whatsapp-api",
+        siteName: "Radoss Agency",
+        images: [
+            {
+                url: "/images/solutions/wabar-og.png",
+                width: 1200,
+                height: 630,
+                alt: "WABAR WhatsApp Business API",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "WABAR | Enterprise WhatsApp Solutions",
+        description: "Scale your business with the official WhatsApp Business API.",
+        images: ["/images/solutions/wabar-og.png"],
+    },
 };
 
 export default function WabarPage() {
@@ -61,17 +86,15 @@ export default function WabarPage() {
             <section className="container" style={{ paddingBottom: '100px' }}>
                 <FeatureGrid features={features} />
 
-                <div style={{ marginTop: '100px', textAlign: 'center' }}>
-                    <Reveal>
-                        <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Start the Conversation</h3>
-                        <p style={{ maxWidth: '600px', margin: '0 auto 2rem', color: 'var(--text-secondary)' }}>
-                            Demo WABAR today and see the power of automated messaging.
-                        </p>
-                        <a href="https://wabar.radoss.agency" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 3rem' }}>
-                            Get WABAR Access
-                        </a>
-                    </Reveal>
-                </div>
+                <SolutionCTA
+                    title="Start the Conversation"
+                    description="Demo WABAR today and see the power of automated messaging."
+                    mainCTA={{
+                        label: "Get WABAR Access",
+                        href: "https://wabar.radoss.agency",
+                        external: true
+                    }}
+                />
             </section>
         </>
     );

@@ -1,12 +1,37 @@
 import type { Metadata } from 'next';
 import { ServiceHero, FeatureGrid } from '../../../components/ServiceComponents';
 import SchemaMarkup from '../../../components/SchemaMarkup';
-import { Reveal } from '../../../components/Reveal';
-import Link from 'next/link';
+import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
     title: "Pay Meta Ads in Naira | Radoss Agency Nigeria",
     description: "Official Meta Business Partner solution. Pay for Facebook & Instagram Ads in Naira without dollar card limits. Seamless, compliant, and efficient.",
+    keywords: ["pay for facebook ads in naira", "meta business partner nigeria", "instagram ads payment nigeria", "no dollar limit card", "naira virtual card for ads"],
+    alternates: {
+        canonical: "https://radoss.agency/solutions/meta-ads-payment",
+    },
+    openGraph: {
+        title: "Pay Meta Ads in Naira | Radoss Agency Nigeria",
+        description: "Official Meta Business Partner solution. Pay for Facebook & Instagram Ads in Naira without dollar card limits.",
+        url: "https://radoss.agency/solutions/meta-ads-payment",
+        siteName: "Radoss Agency",
+        images: [
+            {
+                url: "/images/solutions/meta-ads-og.png",
+                width: 1200,
+                height: 630,
+                alt: "Pay Meta Ads in Naira",
+            },
+        ],
+        locale: "en_NG",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Pay Meta Ads in Naira | Radoss Agency",
+        description: "Bypass dollar limits and pay for your Meta ads in Naira securely.",
+        images: ["/images/solutions/meta-ads-og.png"],
+    },
 };
 
 export default function MetaAdsPaymentPage() {
@@ -64,17 +89,10 @@ export default function MetaAdsPaymentPage() {
             <section className="container" style={{ paddingBottom: '100px' }}>
                 <FeatureGrid features={features} />
 
-                <div style={{ marginTop: '100px', textAlign: 'center' }}>
-                    <Reveal>
-                        <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Uncap Your Potential</h3>
-                        <p style={{ maxWidth: '600px', margin: '0 auto 2rem', color: 'var(--text-secondary)' }}>
-                            Stop letting payment limits dictate your growth.
-                        </p>
-                        <Link href="/contact" className="btn btn-primary" style={{ padding: '1rem 3rem' }}>
-                            Open Ad Account
-                        </Link>
-                    </Reveal>
-                </div>
+                <SolutionCTA
+                    title="Uncap Your Potential"
+                    description="Stop letting payment limits dictate your growth. Join hundreds of businesses using our compliant payment channel."
+                />
             </section>
         </>
     );
