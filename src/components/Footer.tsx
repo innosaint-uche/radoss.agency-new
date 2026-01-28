@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -10,7 +11,13 @@ export default function Footer() {
                 <div className={styles.top}>
                     <div className={styles.brand}>
                         <Link href="/" className={styles.logo}>
-                            Radoss<span className={styles.logoDot}>.</span>
+                            <Image
+                                src="/radoss-logo.jpg"
+                                alt="Radoss Agency - Connecting Dots. Crafting Growth."
+                                width={140}
+                                height={48}
+                                style={{ objectFit: 'contain' }}
+                            />
                         </Link>
                         <p className={styles.tagline}>
                             Connecting Dots. Crafting Growth.

@@ -64,7 +64,7 @@ export default function Home() {
             <Reveal width="100%" delay={0.2}>
               <div className={styles.metricCard}>
                 <h3>Technology</h3>
-                <p>Digital transformation and Martech integration.</p>
+                <p>Digital transformation and MarTech integration.</p>
               </div>
             </Reveal>
           </div>
@@ -115,6 +115,67 @@ export default function Home() {
                   <h3>Brand Strategy</h3>
                 </div>
                 <p>Identity, ATL, and PR.</p>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION: SOLUTIONS & SERVICES */}
+      <section className={styles.solutionsSection}>
+        <div className="container">
+          <Reveal>
+            <div className={styles.sectionHeader}>
+              <h2>Radoss<span className="text-punctuation">.</span> Solutions & Services</h2>
+              <Link href="/solutions">Explore All &rarr;</Link>
+            </div>
+          </Reveal>
+
+          <div className={styles.bentoGrid}>
+            {/* Performance Marketing */}
+            <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
+              <Link href="/solutions/radoss-digital" className={styles.bentoCardLarge}>
+                <div className={styles.cardInfo}>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.cardNum}>01</span>
+                    <h3>Performance Marketing</h3>
+                  </div>
+                  <p>High-ROI campaigns for ambitious brands. Full-service execution across paid media.</p>
+                </div>
+                <div className={styles.cardArrow}>&rarr;</div>
+              </Link>
+            </motion.div>
+
+            {/* Pay Meta in Naira */}
+            <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
+              <Link href="/solutions/meta-ads-payment" className={`${styles.bentoCard} ${styles.blueCard}`}>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardNum}>02</span>
+                  <h3>Pay Meta in Naira</h3>
+                </div>
+                <p>Seamless Facebook & Instagram ad payments.</p>
+              </Link>
+            </motion.div>
+
+            {/* WABAR API */}
+            <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
+              <Link href="/solutions/wabar-whatsapp-api" className={`${styles.bentoCard} ${styles.goldCard}`}>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardNum}>03</span>
+                  <h3>WABAR API</h3>
+                </div>
+                <p>WhatsApp Business API for scale.</p>
+              </Link>
+            </motion.div>
+
+            {/* Digital Maturity */}
+            <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
+              <Link href="/solutions/digital-maturity-assessment" className={styles.bentoCard}>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardNum}>04</span>
+                  <h3>Digital Maturity</h3>
+                </div>
+                <p>Audit your digital readiness.</p>
               </Link>
             </motion.div>
           </div>

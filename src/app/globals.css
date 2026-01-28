@@ -34,10 +34,15 @@
   --particle-secondary: 71, 69, 214;
   /* Blue */
 
-  /* TYPOGRAPHY */
-  --font-main: var(--font-manrope), system-ui, sans-serif;
-  --font-header: var(--font-playfair), serif;
+  /* TYPOGRAPHY - Universal Rules */
+  /* H1: Inter Thin/Light - Hero titles, luxury feel */
+  /* H2: Inter Bold - Major section headers */
+  /* H3: Inter Medium - Sub-headings */
+  /* Body: Manrope Regular - Paragraphs & UI */
+  --font-heading: var(--font-inter), system-ui, sans-serif;
   --font-body: var(--font-manrope), system-ui, sans-serif;
+  --font-logo: var(--font-inter), system-ui, sans-serif;
+
 
   /* GLASSMORPHISM */
   --bg-glass: rgba(2, 4, 8, 0.7);

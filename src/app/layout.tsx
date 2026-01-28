@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Manrope } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -7,17 +7,21 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+// H1, H2, H3 headings and Logo
+const inter = Inter({
     subsets: ["latin"],
-    variable: "--font-playfair",
+    variable: "--font-inter",
     display: "swap",
+    weight: ["100", "300", "400", "500", "600", "700", "800", "900"],
 });
 
+// Body text
 const manrope = Manrope({
     subsets: ["latin"],
     variable: "--font-manrope",
     display: "swap",
 });
+
 
 export const metadata: Metadata = {
     title: "Radoss Agency | Connecting Dots. Crafting Growth.",
@@ -28,7 +32,7 @@ export default function RootLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${manrope.variable}`}>
+        <html lang="en" suppressHydrationWarning className={`${inter.variable} ${manrope.variable}`}>
             <body>
                 <ThemeProvider>
                     <SmoothScroll>

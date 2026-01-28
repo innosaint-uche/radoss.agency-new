@@ -24,15 +24,19 @@
 }
 
 .title {
+    font-family: var(--font-body);
+    /* Reverting to Sans-Serif standard */
     margin-bottom: 2rem;
     font-weight: 800;
     /* Extra bold for authority */
+    letter-spacing: -0.03em;
 }
 
 .subtitle {
     font-size: 1.15rem;
     margin-bottom: 3rem;
     max-width: 45ch;
+    font-family: var(--font-body);
 }
 
 .actions {
@@ -85,12 +89,15 @@
 }
 
 .metricCard h3 {
+    font-family: var(--font-body);
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
+    font-weight: 700;
 }
 
 .metricCard p {
     font-size: 0.95rem;
+    font-family: var(--font-body);
 }
 
 /* CAPABILITIES - BENTO */
@@ -103,6 +110,12 @@
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 3rem;
+}
+
+.sectionHeader h2 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .bentoGrid {
@@ -166,8 +179,11 @@
 
 
 .cardHeader h3 {
+    font-family: var(--font-body);
     margin-top: 0.5rem;
     font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .cardNum {
@@ -201,12 +217,21 @@
 }
 
 .ctaBox h2 {
+    font-family: var(--font-body);
     margin-bottom: 1.5rem;
+    font-weight: 800;
 }
 
 .ctaBox p {
     margin: 0 auto 3rem;
 }
+
+/* SOLUTIONS & SERVICES SECTION */
+.solutionsSection {
+    padding: 8rem 0;
+    /* No background - inherits starry/transparent like other sections */
+}
+
 
 @media (max-width: 900px) {
 

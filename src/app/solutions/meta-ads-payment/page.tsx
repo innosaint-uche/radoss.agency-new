@@ -56,22 +56,22 @@ export default function MetaAdsPaymentPage() {
         {
             title: "No Dollar Limits",
             description: "Bypass the restrictive international spending limits on standard Nigerian debit cards. Scale your ad spend without friction.",
-            icon: <span style={{ fontSize: '24px' }}>💳</span>
+            icon: <span className="feature-num">01</span>
         },
         {
             title: "Meta Business Partner",
             description: "As verified partners, we offer a compliant, secure, and officially recognized channel for ad payments and account management.",
-            icon: <span style={{ fontSize: '24px' }}>🛡️</span>
+            icon: <span className="feature-num">02</span>
         },
         {
             title: "Instant Account Funding",
             description: "Say goodbye to campaign pauses. Our local payment infrastructure ensures your ad accounts are funded instantly.",
-            icon: <span style={{ fontSize: '24px' }}>⚡</span>
+            icon: <span className="feature-num">03</span>
         },
         {
             title: "Dedicated Support",
             description: "Access official support channels for ad account issues, bans, or verification hurdles that standard users can't reach.",
-            icon: <span style={{ fontSize: '24px' }}>🤝</span>
+            icon: <span className="feature-num">04</span>
         }
     ];
 

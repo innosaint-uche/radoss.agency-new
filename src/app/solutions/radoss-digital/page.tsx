@@ -53,22 +53,22 @@ export default function RadossDigitalPage() {
         {
             title: "Precision Targeting",
             description: "We don't guess. We utilize advanced audience segmentation and behavioral data to ensure your ad spend reaches exactly the right eyes.",
-            icon: <span style={{ fontSize: '24px' }}>🎯</span>
+            icon: <span className="feature-num">01</span>
         },
         {
             title: "Data-Driven Creative",
             description: "Art meets Science. Our creative strategies are informed by real-time performance metrics, ensuring high engagement and conversion rates.",
-            icon: <span style={{ fontSize: '24px' }}>🎨</span>
+            icon: <span className="feature-num">02</span>
         },
         {
             title: "Full-Funnel Attribution",
             description: "We track every touchpoint. From first click to final conversion, giving you a crystal-clear view of your ROI across all channels.",
-            icon: <span style={{ fontSize: '24px' }}>📊</span>
+            icon: <span className="feature-num">03</span>
         },
         {
             title: "Programmatic Scale",
             description: "Leveraging automated buying to access premium inventory at efficient rates, scaling your reach beyond walled gardens.",
-            icon: <span style={{ fontSize: '24px' }}>🚀</span>
+            icon: <span className="feature-num">04</span>
         }
     ];
 
