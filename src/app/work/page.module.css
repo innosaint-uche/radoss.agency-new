@@ -65,7 +65,8 @@
 }
 
 .logoContainer {
-    background: white;
+    background: var(--bg-card);
+    border: 1px solid var(--border-focus);
     padding: 2rem;
     border-radius: 4px;
     width: 60%;
@@ -83,7 +84,7 @@
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(2, 4, 8, 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,8 +97,8 @@
 }
 
 .viewProject {
-    border: 1px solid white;
-    color: white;
+    border: 1px solid var(--border-focus);
+    color: var(--text-primary);
     padding: 1rem 2rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -167,7 +168,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(2, 4, 8, 0.82);
     backdrop-filter: blur(5px);
     z-index: 200;
 }
@@ -218,7 +219,8 @@
 .modalLogoContainer {
     width: 120px;
     height: 80px;
-    background: white;
+    background: var(--bg-card);
+    border: 1px solid var(--border-focus);
     padding: 1rem;
     border-radius: 4px;
     display: flex;

@@ -19,6 +19,12 @@ type Result = {
     overallMaturityScore: number;
 };
 
+type LeadFormData = {
+    name: string;
+    company: string;
+    email: string;
+};
+
 type Recommendation = {
     headline: string;
     details: string;
@@ -67,6 +73,8 @@ const maturityDescriptions: Record<string, string> = {
     "Optimizing": "Focus on process improvement and optimization. Digital is ingrained in the organization's DNA, driving continuous innovation, agility, and new value creation. The organization is a leader in leveraging digital technologies and adapting to market changes proactively."
 };
 
+const dimensionsOrder = ["Customer", "Strategy", "Technology", "Operations", "Organisation & Culture"];
+
 const recommendations: RecommendationsData = {
     "Customer": { "Initial": { _default: [{ headline: "Map Basic Customer Journey", details: "Begin by outlining the fundamental steps a customer takes when interacting with your business. This helps identify key touchpoints where digital improvements can be made, even simple ones like ensuring contact information is easily found online." }, { headline: "Implement Simple Feedback Collection", details: "Start collecting customer feedback through straightforward methods like a basic online survey after a purchase or interaction, or a suggestion box. The goal is to begin listening, even if the analysis is manual at first." }], Retail: [{ headline: "Retail: Improve In-Store Basics", details: "For retail businesses, consider how basic digital tools can enhance the physical store experience.", personalizedFor: "Retail" }], Small: [{ headline: "Small Businesses: Leverage Free Tools", details: "For small businesses with limited budgets, utilize free or low-cost tools like Google My Business.", personalizedFor: "Small Business" }] }, "Managed": { _default: [{ headline: "Centralize Customer Data", details: "Move towards a centralized system, even a simple CRM or a well-organized spreadsheet, to store and manage customer information." }, { headline: "Analyze Existing Feedback", details: "Review any customer feedback you've collected to identify common pain points." }], B2C: [{ headline: "B2C: Explore Email Marketing", details: "For B2C businesses, consider using basic email marketing tools.", personalizedFor: "B2C Business" }] }, "Defined": { _default: [{ headline: "Implement a Comprehensive CRM", details: "Invest in and implement a Customer Relationship Management (CRM) system." }, { headline: "Develop Customer Personas", details: "Create detailed customer personas representing your different customer segments." }], Healthcare: [{ headline: "Healthcare: Ensure Compliance", details: "For healthcare organizations, ensure all patient data collection is compliant.", personalizedFor: "Healthcare" }], Finance: [{ headline: "Finance: Secure Customer Portals", details: "For financial institutions, focus on providing secure and user-friendly online portals.", personalizedFor: "Finance" }] }, "Quantitatively Managed": { _default: [{ headline: "Utilize Advanced Analytics for Personalization", details: "Leverage customer data and advanced analytics for personalization." }, { headline: "Implement A/B Testing", details: "Systematically use A/B testing for different customer experiences." }], Large: [{ headline: "Large Enterprises: Invest in a CDP", details: "For large enterprises, consider investing in a Customer Data Platform (CDP).", personalizedFor: "Large Enterprise" }] }, "Optimizing": { _default: [{ headline: "Invest in AI for Predictive Personalization", details: "Employ AI and machine learning tools for advanced predictive analytics." }, { headline: "Foster Customer Co-Creation", details: "Create platforms and processes that involve customers in co-creation." }] } },
     "Strategy": { "Initial": { _default: [{ headline: "Initiate Leadership Discussions", details: "Start conversations among the leadership team about digital trends." }] }, "Managed": { _default: [{ headline: "Formally Document a Basic Digital Vision", details: "Translate discussions into a documented basic digital vision." }] }, "Defined": { _default: [{ headline: "Develop a Comprehensive Digital Roadmap", details: "Create a formal digital transformation roadmap with clear objectives." }], Manufacturing: [{ headline: "Manufacturing: Align with Industry 4.0", details: "For manufacturing, align digital strategy with Industry 4.0 concepts.", personalizedFor: "Manufacturing" }] }, "Quantitatively Managed": { _default: [{ headline: "Establish a Digital Innovation Fund & Process", details: "Create a dedicated fund for digital innovations." }] }, "Optimizing": { _default: [{ headline: "Embed Digital into All Strategic Planning", details: "Ensure digital thinking is integral to all strategic planning." }] } },
@@ -83,6 +91,12 @@ export default function DigitalMaturityAssessment() {
     const [showResults, setShowResults] = useState(false);
     const [businessProfile, setBusinessProfile] = useState({ industry: "", scale: "", type: "" });
     const [results, setResults] = useState<Result | null>(null);
+    const [leadForm, setLeadForm] = useState<LeadFormData>({ name: "", company: "", email: "" });
+    const [leadCaptureOpen, setLeadCaptureOpen] = useState(false);
+    const [leadCaptured, setLeadCaptured] = useState(false);
+    const [leadSubmitting, setLeadSubmitting] = useState(false);
+    const [leadError, setLeadError] = useState("");
+    const [leadNotice, setLeadNotice] = useState("");
 
     // Handlers
     const handleStart = () => {
@@ -180,48 +194,305 @@ export default function DigitalMaturityAssessment() {
         return uniqueRecs.length > 0 ? uniqueRecs : [{ headline: "General Advice", details: "Focus on foundational digital practices." }];
     };
 
+    const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
+    const handleDownloadRequest = () => {
+        setLeadError("");
+        if (leadCaptured) {
+            generatePdf();
+            return;
+        }
+        setLeadCaptureOpen(true);
+    };
+
+    const submitLeadAndDownload = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (!results) return;
+
+        const trimmedName = leadForm.name.trim();
+        const trimmedCompany = leadForm.company.trim();
+        const trimmedEmail = leadForm.email.trim().toLowerCase();
+
+        if (!trimmedName || !trimmedCompany || !trimmedEmail) {
+            setLeadError("Name, company, and email are required.");
+            return;
+        }
+        if (!isValidEmail(trimmedEmail)) {
+            setLeadError("Enter a valid work email address.");
+            return;
+        }
+
+        setLeadSubmitting(true);
+        setLeadError("");
+        setLeadNotice("");
+
+        try {
+            const response = await fetch('/api/digital-maturity/lead', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    lead: {
+                        name: trimmedName,
+                        company: trimmedCompany,
+                        email: trimmedEmail,
+                    },
+                    businessProfile,
+                    results,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok || !data?.success) {
+                throw new Error(data?.message || 'Could not submit lead details.');
+            }
+
+            setLeadCaptured(true);
+            setLeadCaptureOpen(false);
+            if (data?.syncStatus === 'full') {
+                setLeadNotice('Lead captured. Your PDF download is starting.');
+            } else if (data?.syncStatus === 'partial') {
+                setLeadNotice('Details submitted with partial sync. Your PDF download is starting.');
+            } else {
+                setLeadNotice('Details submitted, but integrations are not fully configured. Your PDF download is starting.');
+            }
+            generatePdf();
+        } catch (error) {
+            const message = error instanceof Error ? error.message : 'Failed to submit lead details.';
+            setLeadError(message);
+            setLeadNotice('PDF download started, but lead sync failed. Please re-submit your details so we can follow up.');
+            generatePdf();
+        } finally {
+            setLeadSubmitting(false);
+        }
+    };
+
     const generatePdf = () => {
         if (!results) return;
-        const doc = new jsPDF();
-        const { dimensionResults, overallMaturityLevel } = results;
+        const doc = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+        const { dimensionResults, overallMaturityLevel, overallMaturityScore } = results;
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const margin = 15;
+        const asAnyDoc = doc as jsPDF & { lastAutoTable?: { finalY: number } };
+        const gold: [number, number, number] = [255, 217, 3];
+        const blue: [number, number, number] = [71, 69, 214];
+        const slate: [number, number, number] = [2, 4, 8];
+        const white: [number, number, number] = [255, 255, 255];
+        const muted: [number, number, number] = [130, 138, 150];
+        const aboutRadoss =
+            'Radoss Agency is an integrated transformation partner connecting business strategy, marketing execution, and technology systems to unlock measurable growth.';
+        let yPos = margin;
 
-        // Header
-        doc.setFillColor(15, 23, 42);
-        doc.rect(0, 0, 210, 297, 'F'); // Dark Bg
+        const drawRadossWordmark = (
+            x: number,
+            y: number,
+            fontSize: number,
+            align: 'left' | 'center' = 'left',
+        ) => {
+            const word = 'Radoss';
+            const dot = '.';
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(fontSize);
+            const wordWidth = doc.getTextWidth(word);
+            const dotWidth = doc.getTextWidth(dot);
+            const fullWidth = wordWidth + dotWidth;
+            const startX = align === 'center' ? x - (fullWidth / 2) : x;
 
-        doc.setTextColor(255, 215, 0);
-        doc.setFontSize(24);
-        doc.text("Digital Maturity Assessment Report", 105, 100, { align: 'center' });
+            doc.setTextColor(white[0], white[1], white[2]);
+            doc.text(word, startX, y);
+            doc.setTextColor(gold[0], gold[1], gold[2]);
+            doc.text(dot, startX + wordWidth, y);
 
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(14);
-        doc.text(`Prepared for: ${businessProfile.industry}`, 105, 115, { align: 'center' });
+            return fullWidth;
+        };
 
-        // New Page - Executive Summary
+        const addText = (
+            text: string,
+            x: number,
+            y: number,
+            options?: {
+                fontSize?: number;
+                fontStyle?: 'normal' | 'bold' | 'italic' | 'bolditalic';
+                color?: [number, number, number];
+                maxWidth?: number;
+                align?: 'left' | 'center' | 'right';
+            }
+        ) => {
+            const fontSize = options?.fontSize ?? 10;
+            const fontStyle = options?.fontStyle ?? 'normal';
+            const color = options?.color ?? [0, 0, 0];
+            const maxWidth = options?.maxWidth ?? (pageWidth - margin * 2);
+
+            doc.setFontSize(fontSize);
+            doc.setFont('helvetica', fontStyle);
+            doc.setTextColor(color[0], color[1], color[2]);
+
+            const lines = doc.splitTextToSize(text, maxWidth);
+            doc.text(lines, x, y, { align: options?.align ?? 'left' });
+            return y + (lines.length * (fontSize * 0.352778) * 1.2);
+        };
+
+        const addHeader = () => {
+            doc.setFillColor(slate[0], slate[1], slate[2]);
+            doc.rect(0, 0, pageWidth, 22, 'F');
+            drawRadossWordmark(margin, 13, 14, 'left');
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9);
+            doc.setTextColor(white[0], white[1], white[2]);
+            doc.text('Digital Maturity Assessment Report', pageWidth - margin, 13, { align: 'right' });
+            doc.setDrawColor(gold[0], gold[1], gold[2]);
+            doc.line(margin, 24, pageWidth - margin, 24);
+        };
+
+        const addFooter = (pageNum: number, totalPages: number) => {
+            doc.setFontSize(8);
+            doc.setTextColor(muted[0], muted[1], muted[2]);
+            doc.text('Radoss Agency | Connecting Dots & Crafting Growth', margin, pageHeight - 8);
+            doc.text(`Page ${pageNum} of ${totalPages}`, pageWidth - margin, pageHeight - 8, { align: 'right' });
+        };
+
+        // Cover
+        doc.setFillColor(slate[0], slate[1], slate[2]);
+        doc.rect(0, 0, pageWidth, pageHeight, 'F');
+        const goldStars: Array<[number, number]> = [[18, 18], [36, 42], [24, 74], [56, 28], [170, 22], [190, 48], [166, 66], [182, 92], [28, 190], [42, 222], [172, 206], [188, 236]];
+        const blueStars: Array<[number, number]> = [[22, 34], [50, 56], [160, 38], [176, 58], [34, 208], [158, 222]];
+        doc.setFillColor(gold[0], gold[1], gold[2]);
+        goldStars.forEach(([x, y], i) => {
+            doc.circle(x, y, i % 3 === 0 ? 0.6 : 0.42, 'F');
+        });
+        doc.setFillColor(blue[0], blue[1], blue[2]);
+        blueStars.forEach(([x, y]) => {
+            doc.circle(x, y, 0.35, 'F');
+        });
+        drawRadossWordmark(pageWidth / 2, 80, 28, 'center');
+        yPos = addText('Digital Maturity Assessment Report', pageWidth / 2, 104, {
+            fontSize: 22,
+            fontStyle: 'bold',
+            color: gold,
+            align: 'center'
+        });
+        yPos = addText(`Prepared for: ${businessProfile.industry}`, pageWidth / 2, yPos + 8, {
+            fontSize: 13,
+            color: white,
+            align: 'center'
+        });
+        yPos = addText(`Business Type: ${businessProfile.type} | Scale: ${businessProfile.scale}`, pageWidth / 2, yPos + 6, {
+            fontSize: 11,
+            color: muted,
+            align: 'center'
+        });
+        addText(`Assessment Date: ${new Date().toLocaleDateString()}`, pageWidth / 2, yPos + 6, {
+            fontSize: 10,
+            color: muted,
+            align: 'center'
+        });
+
+        // Executive summary
         doc.addPage();
-        doc.setTextColor(0, 0, 0); // Reset to black for white page logic or keep dark if we want full custom
-        // ... (Simplified PDF logic for brevity, implementing core structure)
+        addHeader();
+        yPos = 34;
+        yPos = addText('Executive Summary', margin, yPos, { fontSize: 18, fontStyle: 'bold' });
+        yPos += 4;
+        yPos = addText(`Overall Maturity Level: ${overallMaturityLevel} (Score ${overallMaturityScore}/5)`, margin, yPos, {
+            fontSize: 13,
+            fontStyle: 'bold',
+            color: blue
+        });
+        yPos = addText(maturityDescriptions[overallMaturityLevel], margin, yPos + 2, { fontSize: 10 });
+        yPos += 8;
+        yPos = addText('Key Findings by Dimension', margin, yPos, { fontSize: 13, fontStyle: 'bold' });
 
-        doc.setFontSize(18);
-        doc.text("Executive Summary", 14, 20);
-
-        doc.setFontSize(12);
-        doc.text(`Overall Maturity Level: ${overallMaturityLevel}`, 14, 30);
-        doc.text(maturityDescriptions[overallMaturityLevel], 14, 40, { maxWidth: 180 });
-
-        // Table
-        const summaryData: string[][] = [];
-        Object.keys(dimensionResults).forEach(dim => {
-            summaryData.push([dim, dimensionResults[dim].level]);
+        const summaryRows: string[][] = [];
+        dimensionsOrder.forEach((dim) => {
+            if (dimensionResults[dim]) {
+                summaryRows.push([dim, dimensionResults[dim].level]);
+            }
         });
 
         autoTable(doc, {
-            startY: 60,
+            startY: yPos + 2,
             head: [['Dimension', 'Maturity Level']],
-            body: summaryData,
+            body: summaryRows,
+            theme: 'grid',
+            headStyles: { fillColor: blue, textColor: [255, 255, 255] },
+            styles: { fontSize: 9, cellPadding: 2.5 },
+            alternateRowStyles: { fillColor: [248, 249, 252] },
+        });
+        yPos = (asAnyDoc.lastAutoTable?.finalY ?? yPos) + 8;
+
+        yPos = addText('About Radoss.', margin, yPos, {
+            fontSize: 12,
+            fontStyle: 'bold',
+            color: gold,
+        });
+        yPos = addText(aboutRadoss, margin, yPos + 1, {
+            fontSize: 9.5,
+            color: muted,
+        });
+        yPos += 6;
+
+        addText('This report prioritizes practical next steps tied to your business context and maturity stage.', margin, yPos, {
+            fontSize: 10,
+            color: muted
         });
 
-        doc.save('Radoss_Digital_Maturity_Report.pdf');
+        // Detailed recommendations
+        doc.addPage();
+        addHeader();
+        yPos = 34;
+        yPos = addText('Detailed Recommendations by Dimension', margin, yPos, { fontSize: 18, fontStyle: 'bold' });
+        yPos += 5;
+
+        dimensionsOrder.forEach((dim) => {
+            if (!dimensionResults[dim]) return;
+            const result = dimensionResults[dim];
+            const recs = getPersonalizedRecommendations(dim, result.level);
+            const recRows = recs.map((rec) => {
+                const headline = rec.personalizedFor ? `${rec.headline} (Tailored for ${rec.personalizedFor})` : rec.headline;
+                return [headline, rec.details];
+            });
+
+            const estimatedHeight = 30 + recRows.length * 13;
+            if (yPos + estimatedHeight > pageHeight - margin - 12) {
+                doc.addPage();
+                addHeader();
+                yPos = 34;
+            }
+
+            autoTable(doc, {
+                startY: yPos,
+                head: [[{ content: `${dim} — ${result.level}`, colSpan: 2, styles: { halign: 'left', fillColor: blue, textColor: [255, 255, 255] } }]],
+                body: [[{ content: `"${maturityDescriptions[result.level]}"`, colSpan: 2, styles: { fontStyle: 'italic', textColor: [90, 90, 90] } }]],
+                theme: 'grid',
+                styles: { fontSize: 9, cellPadding: 2.2 }
+            });
+            yPos = (asAnyDoc.lastAutoTable?.finalY ?? yPos) + 1;
+
+            autoTable(doc, {
+                startY: yPos,
+                head: [['Recommendation', 'Details & Action Steps']],
+                body: recRows,
+                theme: 'striped',
+                headStyles: { fillColor: gold, textColor: [15, 23, 42] },
+                styles: { fontSize: 9, cellPadding: 2.2 },
+                columnStyles: {
+                    0: { fontStyle: 'bold', cellWidth: 60 },
+                    1: { cellWidth: 'auto' }
+                }
+            });
+            yPos = (asAnyDoc.lastAutoTable?.finalY ?? yPos) + 8;
+        });
+
+        const totalPages = doc.internal.getNumberOfPages();
+        for (let i = 1; i <= totalPages; i++) {
+            doc.setPage(i);
+            addFooter(i, totalPages);
+        }
+
+        doc.save('Radoss_Agency_Digital_Maturity_Report.pdf');
     };
 
     const restartQuiz = () => {
@@ -230,47 +501,96 @@ export default function DigitalMaturityAssessment() {
         setCurrentQuestionIndex(0);
         setAnswers(new Array(questions.length).fill(null));
         setResults(null);
+        setLeadCaptureOpen(false);
+        setLeadCaptured(false);
+        setLeadSubmitting(false);
+        setLeadError("");
+        setLeadNotice("");
+        setLeadForm({ name: "", company: "", email: "" });
     };
+
+    const freeBenefits = [
+        {
+            title: 'Free Instant Scoring',
+            text: 'Get immediate maturity scores across Customer, Strategy, Technology, Operations, and Organisation & Culture.',
+        },
+        {
+            title: 'Tailored Recommendations',
+            text: 'Receive contextual recommendations based on your business profile, not generic transformation advice.',
+        },
+        {
+            title: 'Executive-Ready PDF',
+            text: 'Download a clean report you can share with leadership teams for planning and prioritization.',
+        },
+    ];
 
     return (
         <div className={styles.toolWrapper}>
             <section className={styles.gradientHero}>
                 <div className="container">
-                    <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 800, color: '#F8FAFC', lineHeight: 1.2 }}>
+                    <div className={styles.heroMeta}>
+                        <span className={styles.freeBadge}>FREE</span>
+                        <span className={styles.metaText}>15 Questions • 5 Dimensions • Instant Report</span>
+                    </div>
+                    <h1 className={styles.heroTitle}>
                         <span className={styles.highlightGold}>Digital</span> Maturity Assessment Tool<span className={styles.highlightGold}>.</span>
                     </h1>
                     <p className={styles.heroSubtitle}>
-                        Chart your course to digital excellence. Understand your current standing and identify key areas for transformative growth with our comprehensive assessment.
+                        A free strategic diagnostic for leaders who want clarity on digital readiness, capability gaps, and the next best moves for transformation.
                     </p>
                     {!started && (
                         <button onClick={() => document.getElementById('assessment-start')?.scrollIntoView({ behavior: 'smooth' })} className={styles.heroButton}>
-                            Begin Assessment
+                            Start Free Assessment
                         </button>
                     )}
                 </div>
             </section>
 
             <div className={styles.pageContent}>
-                <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+                <div className={`container ${styles.centeredContainer}`}>
 
                     {!started && !showResults && (
                         <>
                             <section className={styles.contentSection}>
                                 <h2>Why Assess Your Digital Maturity?</h2>
-                                <p>Understanding your organization&apos;s digital capabilities is a necessity. A Digital Maturity Assessment Tool (DMAT) provides a clear snapshot of where your business stands.</p>
+                                <p>Transformation is hard when priorities are unclear. This free assessment gives your team a baseline so investments, capability building, and execution plans can be sequenced with confidence.</p>
                                 <ul className={styles.list}>
-                                    <li><strong>Identify Strengths & Weaknesses</strong></li>
-                                    <li><strong>Benchmark Performance</strong></li>
-                                    <li><strong>Prioritize Investments</strong></li>
+                                    <li><strong>Identify Strengths & Weaknesses:</strong> see where your current model is helping or holding growth back.</li>
+                                    <li><strong>Benchmark Maturity:</strong> understand how advanced your systems and operating habits are.</li>
+                                    <li><strong>Prioritize Investment:</strong> focus budget and execution energy where impact will be highest.</li>
+                                    <li><strong>Align Leadership:</strong> establish shared language and measurable transformation priorities.</li>
+                                </ul>
+                            </section>
+
+                            <section className={styles.contentSection}>
+                                <h2>What You Get (Free)</h2>
+                                <div className={styles.benefitsGrid}>
+                                    {freeBenefits.map((item) => (
+                                        <article key={item.title} className={styles.benefitCard}>
+                                            <h3>{item.title}</h3>
+                                            <p>{item.text}</p>
+                                        </article>
+                                    ))}
+                                </div>
+                            </section>
+
+                            <section className={styles.contentSection}>
+                                <h2>Who Should Use This Tool?</h2>
+                                <p>This assessment is designed for founders, C-suite leaders, growth teams, and operations teams that need an honest, structured view of digital readiness before making strategic bets.</p>
+                                <ul className={styles.list}>
+                                    <li><strong>SMEs and Scaleups:</strong> building repeatable growth systems and operational discipline.</li>
+                                    <li><strong>Enterprise Units:</strong> modernizing legacy workflows, tooling, and customer journeys.</li>
+                                    <li><strong>Marketing and Revenue Teams:</strong> aligning sales, marketing, data, and automation workflows.</li>
+                                    <li><strong>Transformation Leads:</strong> creating a practical roadmap backed by measurable maturity signals.</li>
                                 </ul>
                             </section>
 
                             <section id="assessment-start" className={styles.contentSection}>
                                 <div className={styles.quizContainer}>
-                                    <h2 style={{ color: '#FFD700', textAlign: 'center', marginBottom: '1rem' }}>Welcome!</h2>
-                                    <p style={{ textAlign: 'center', marginBottom: '2rem', color: '#CBD5E1' }}>Tell us a bit about your business to get started.</p>
+                                    <h2 className={styles.quizHeading}>Start Your Free Assessment</h2>
+                                    <p className={styles.quizIntro}>Tell us a bit about your business so your recommendations are context-aware and practical.</p>
 
-                                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                                    <div className={styles.profileGrid}>
                                         <div>
                                             <label className={styles.inputLabel}>Industry</label>
                                             <input
@@ -311,8 +631,8 @@ export default function DigitalMaturityAssessment() {
                                         </div>
                                     </div>
 
-                                    <div style={{ textAlign: 'center' }}>
-                                        <button onClick={handleStart} className={styles.heroButton}>Start Assessment</button>
+                                    <div className={styles.centerRow}>
+                                        <button onClick={handleStart} className={styles.heroButton}>Continue to Questions</button>
                                     </div>
                                 </div>
                             </section>
@@ -326,10 +646,10 @@ export default function DigitalMaturityAssessment() {
                             </div>
 
                             <div className={styles.questionCard}>
-                                <h2 style={{ fontSize: '1.25rem', textAlign: 'left', color: '#FFD700', marginBottom: '0.5rem' }}>
+                                <h2 className={styles.questionDimension}>
                                     Dimension: {questions[currentQuestionIndex].dimension}
                                 </h2>
-                                <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem', color: '#E2E8F0' }}>
+                                <p className={styles.questionText}>
                                     {currentQuestionIndex + 1}. {questions[currentQuestionIndex].text}
                                 </p>
                                 <div>
@@ -344,7 +664,7 @@ export default function DigitalMaturityAssessment() {
                                                 name={`q${currentQuestionIndex}`}
                                                 checked={answers[currentQuestionIndex] === option.score}
                                                 readOnly
-                                                style={{ marginRight: '10px' }}
+                                                className={styles.radioInput}
                                             />
                                             {option.text}
                                         </label>
@@ -352,9 +672,9 @@ export default function DigitalMaturityAssessment() {
                                 </div>
                             </div>
 
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2rem' }}>
+                            <div className={styles.navRow}>
                                 <button onClick={handlePrev} disabled={currentQuestionIndex === 0} className={styles.navButton}>Previous</button>
-                                <span style={{ color: '#CBD5E1' }}>Question {currentQuestionIndex + 1} of {questions.length}</span>
+                                <span className={styles.navStatus}>Question {currentQuestionIndex + 1} of {questions.length}</span>
                                 <button onClick={handleNext} disabled={answers[currentQuestionIndex] === null} className={styles.navButton}>
                                     {currentQuestionIndex === questions.length - 1 ? 'Show Results' : 'Next'}
                                 </button>
@@ -364,43 +684,109 @@ export default function DigitalMaturityAssessment() {
 
                     {showResults && results && (
                         <section className={styles.contentSection}>
-                            <h2 style={{ fontSize: '2rem', color: '#FFD700', textAlign: 'center', marginBottom: '2rem' }}>Your Digital Maturity Results</h2>
+                            <h2 className={styles.resultsTitle}>Your Digital Maturity Results</h2>
 
-                            <div className={styles.resultBox} style={{ textAlign: 'center', borderColor: 'rgba(79, 70, 229, 0.3)', backgroundColor: 'rgba(79, 70, 229, 0.1)' }}>
-                                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#F8FAFC' }}>Overall Maturity Level: <span style={{ color: '#FFD700' }}>{results.overallMaturityLevel}</span></h3>
-                                <p style={{ color: '#CBD5E1' }}>{maturityDescriptions[results.overallMaturityLevel]}</p>
+                            <div className={`${styles.resultBox} ${styles.overallResultBox}`}>
+                                <h3 className={styles.overallHeading}>Overall Maturity Level: <span className={styles.overallLevel}>{results.overallMaturityLevel}</span></h3>
+                                <p className={styles.overallDescription}>{maturityDescriptions[results.overallMaturityLevel]}</p>
                             </div>
 
-                            <h3 style={{ fontSize: '1.5rem', textAlign: 'center', margin: '2rem 0', color: '#F8FAFC' }}>Recommendations by Dimension</h3>
+                            <h3 className={styles.sectionSubheading}>Recommendations by Dimension</h3>
 
-                            {Object.keys(results.dimensionResults).map(dim => {
+                            {dimensionsOrder.filter((dim) => Boolean(results.dimensionResults[dim])).map(dim => {
                                 const result = results.dimensionResults[dim];
                                 const recs = getPersonalizedRecommendations(dim, result.level);
 
                                 return (
                                     <div key={dim} className={styles.resultBox}>
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                                            <h4 style={{ fontSize: '1.25rem', color: '#F8FAFC' }}>{dim}</h4>
-                                            <span style={{ color: '#FFD700', fontWeight: 600 }}>{result.level}</span>
+                                        <div className={styles.resultHeader}>
+                                            <h4 className={styles.resultDimension}>{dim}</h4>
+                                            <span className={styles.resultLevel}>{result.level}</span>
                                         </div>
-                                        <p style={{ fontStyle: 'italic', marginBottom: '1rem', color: '#94A3B8', fontSize: '0.9rem' }}>&quot;{maturityDescriptions[result.level]}&quot;</p>
+                                        <p className={styles.dimensionQuote}>&quot;{maturityDescriptions[result.level]}&quot;</p>
 
                                         {recs.map((rec: Recommendation, i: number) => (
-                                            <div key={i} style={{ marginBottom: '1rem' }}>
-                                                <strong style={{ color: '#FFD700', display: 'block', marginBottom: '0.25rem' }}>
-                                                    {rec.headline} {rec.personalizedFor && <span style={{ fontSize: '0.75em', color: '#60a5fa' }}>({rec.personalizedFor})</span>}
+                                            <div key={i} className={styles.recommendationItem}>
+                                                <strong className={styles.recommendationHeadline}>
+                                                    {rec.headline} {rec.personalizedFor && <span className={styles.personalizedTag}>({rec.personalizedFor})</span>}
                                                 </strong>
-                                                <p style={{ fontSize: '0.95rem', color: '#CBD5E1' }}>{rec.details}</p>
+                                                <p className={styles.recommendationText}>{rec.details}</p>
                                             </div>
                                         ))}
                                     </div>
                                 );
                             })}
 
-                            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
-                                <button onClick={restartQuiz} className={styles.heroButton} style={{ backgroundColor: '#4f46e5', color: 'white' }}>Restart Assessment</button>
-                                <button onClick={generatePdf} className={styles.heroButton}>Download PDF Report</button>
+                            <div className={styles.resultActions}>
+                                <button onClick={restartQuiz} className={`${styles.heroButton} ${styles.secondaryButton}`}>Restart Assessment</button>
+                                <button onClick={handleDownloadRequest} className={styles.heroButton}>
+                                    {leadCaptured ? 'Download PDF Report' : 'Get PDF Report'}
+                                </button>
                             </div>
+                            {leadNotice && <p className={styles.leadNotice}>{leadNotice}</p>}
+
+                            {leadCaptureOpen && (
+                                <div className={`${styles.resultBox} ${styles.leadCaptureCard}`}>
+                                    <h3 className={styles.leadHeading}>Get Your Report by Email + Instant Download</h3>
+                                    <p className={styles.leadCopy}>
+                                        Enter your details so we can send a copy to your inbox and log your assessment for follow-up support.
+                                    </p>
+                                    <form onSubmit={submitLeadAndDownload} className={styles.leadForm}>
+                                        <div className={styles.leadFormGrid}>
+                                            <div>
+                                                <label className={styles.inputLabel}>Name</label>
+                                                <input
+                                                    type="text"
+                                                    className={styles.inputField}
+                                                    value={leadForm.name}
+                                                    onChange={(e) => setLeadForm((prev) => ({ ...prev, name: e.target.value }))}
+                                                    placeholder="Your full name"
+                                                    required
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className={styles.inputLabel}>Company</label>
+                                                <input
+                                                    type="text"
+                                                    className={styles.inputField}
+                                                    value={leadForm.company}
+                                                    onChange={(e) => setLeadForm((prev) => ({ ...prev, company: e.target.value }))}
+                                                    placeholder="Company name"
+                                                    required
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className={styles.inputLabel}>Email</label>
+                                                <input
+                                                    type="email"
+                                                    className={styles.inputField}
+                                                    value={leadForm.email}
+                                                    onChange={(e) => setLeadForm((prev) => ({ ...prev, email: e.target.value }))}
+                                                    placeholder="you@company.com"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                        {leadError && <p className={styles.leadError}>{leadError}</p>}
+                                        <div className={styles.leadActions}>
+                                            <button type="submit" className={styles.heroButton} disabled={leadSubmitting}>
+                                                {leadSubmitting ? 'Saving…' : 'Submit & Download PDF'}
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className={styles.navButton}
+                                                onClick={() => {
+                                                    setLeadCaptureOpen(false);
+                                                    setLeadError("");
+                                                }}
+                                                disabled={leadSubmitting}
+                                            >
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            )}
 
                             <SolutionCTA
                                 title="Need a Custom Digital Roadmap?"

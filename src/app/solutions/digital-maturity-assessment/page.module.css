@@ -1,71 +1,133 @@
 .toolWrapper {
-    background-color: #0F172A;
+    background: transparent;
     min-height: 100vh;
-    color: #F8FAFC;
-    font-family: 'Manrope', sans-serif;
+    color: var(--text-primary);
+    font-family: var(--font-body);
 }
 
 .gradientHero {
-    background: radial-gradient(circle at top right, rgba(255, 215, 0, 0.1), transparent 40%),
-        radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.15), transparent 40%),
-        #0F172A;
-    padding: 8rem 0 4rem;
-    text-align: center;
+    background: transparent;
+    padding: 8.5rem 0 4.25rem;
+    text-align: left;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.gradientHero :global(.container) {
+    max-width: 1180px;
 }
 
 .highlightGold {
-    color: #FFD700;
+    color: var(--accent-primary);
+}
+
+.heroMeta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.4rem;
+    flex-wrap: wrap;
+}
+
+.freeBadge {
+    background: var(--accent-primary);
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    padding: 0.45rem 0.82rem;
+    border-radius: 999px;
+    box-shadow: 0 8px 18px rgba(var(--particle-primary), 0.2);
+}
+
+.metaText {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.heroTitle {
+    font-family: var(--font-body);
+    font-size: clamp(2.4rem, 6vw, 4.25rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin: 0;
+    max-width: 18ch;
 }
 
 .heroSubtitle {
-    font-size: 1.25rem;
-    color: #CBD5E1;
-    max-width: 700px;
-    margin: 1.5rem auto 2.5rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 65ch;
+    margin: 1.5rem 0 2.25rem;
+    line-height: 1.7;
 }
 
 .heroButton {
-    background: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
-    color: #0F172A;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-primary);
+    color: #000;
+    border: 1px solid var(--accent-primary);
+    padding: 0.95rem 1.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    border-radius: 50px;
+    border-radius: var(--radius);
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .heroButton:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(255, 215, 0, 0.4);
+    background: var(--brand-white);
+    border-color: var(--brand-white);
+}
+
+.secondaryButton {
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+    color: #fff;
+}
+
+.secondaryButton:hover {
+    background: var(--brand-white);
+    border-color: var(--brand-white);
+    color: #000;
 }
 
 .pageContent {
-    padding: 4rem 0;
+    padding: 4rem 0 5rem;
+}
+
+.centeredContainer {
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .contentSection {
     margin-bottom: 4rem;
-    animation: fadeIn 0.8s ease-out;
+    animation: fadeIn 0.6s ease-out;
 }
 
 .contentSection h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #F8FAFC;
-    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    color: var(--text-primary);
+    margin-bottom: 1.3rem;
 }
 
 .contentSection p {
-    color: #CBD5E1;
+    color: var(--text-secondary);
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .list {
@@ -75,113 +137,198 @@
 
 .list li {
     margin-bottom: 1rem;
-    padding-left: 1.5rem;
+    padding-left: 1.25rem;
     position: relative;
-    color: #E2E8F0;
+    color: var(--text-secondary);
+}
+
+.list li strong {
+    color: var(--text-primary);
 }
 
 .list li::before {
-    content: "•";
-    color: #FFD700;
+    content: "\2022";
+    color: var(--accent-primary);
     position: absolute;
     left: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1;
 }
 
-/* Quiz Styles */
+.benefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.benefitCard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+}
+
+.benefitCard h3 {
+    color: var(--text-primary);
+    font-size: 1.03rem;
+    margin-bottom: 0.45rem;
+}
+
+.benefitCard p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 .quizContainer {
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    padding: 3rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 2.3rem;
+}
+
+.quizHeading {
+    color: var(--accent-primary);
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+}
+
+.quizIntro {
+    text-align: center;
+    margin-bottom: 1.8rem;
+    color: var(--text-secondary);
+}
+
+.profileGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.centerRow {
+    text-align: center;
 }
 
 .inputLabel {
     display: block;
     margin-bottom: 0.5rem;
-    color: #94A3B8;
-    font-size: 0.9rem;
-    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .inputField {
     width: 100%;
-    padding: 0.75rem 1rem;
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
-    color: #F8FAFC;
+    padding: 0.75rem 0.9rem;
+    background: transparent;
+    border: 1px solid var(--border-focus);
+    border-radius: var(--radius);
+    color: var(--text-primary);
     font-size: 1rem;
     transition: border-color 0.2s;
 }
 
 .inputField:focus {
     outline: none;
-    border-color: #FFD700;
+    border-color: var(--accent-primary);
 }
 
 .progressBarContainer {
     height: 4px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--border-subtle);
     border-radius: 2px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     overflow: hidden;
 }
 
 .progressBar {
     height: 100%;
-    background: #FFD700;
+    background: var(--accent-primary);
     transition: width 0.4s ease;
 }
 
 .questionCard {
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.questionDimension {
+    font-size: 1.15rem;
+    text-align: left;
+    color: var(--accent-primary);
+    margin-bottom: 0.45rem;
+}
+
+.questionText {
+    font-size: 1.05rem;
+    margin-bottom: 1.3rem;
+    color: var(--text-primary);
 }
 
 .optionLabel {
     display: flex;
-    align-items: center;
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.9rem;
+    margin-bottom: 0.7rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.2s;
-    color: #E2E8F0;
+    color: var(--text-secondary);
+    line-height: 1.55;
 }
 
 .optionLabel:hover {
-    background: rgba(255, 215, 0, 0.05);
-    border-color: rgba(255, 215, 0, 0.3);
+    background: var(--bg-surface);
+    border-color: var(--accent-primary);
 }
 
 .selectedOption {
-    background: rgba(255, 215, 0, 0.15) !important;
-    border-color: #FFD700 !important;
-    color: #FFD700;
+    background: rgba(var(--particle-primary), 0.1) !important;
+    border-color: var(--accent-primary) !important;
+    color: var(--text-primary);
+}
+
+.radioInput {
+    margin-top: 0.2rem;
+}
+
+.navRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.navStatus {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .navButton {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #F8FAFC;
-    padding: 0.75rem 2rem;
-    border-radius: 50px;
+    border: 1px solid var(--border-focus);
+    color: var(--text-primary);
+    padding: 0.72rem 1.6rem;
+    border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .navButton:hover:not(:disabled) {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #FFD700;
+    background: var(--bg-card);
+    border-color: var(--accent-primary);
 }
 
 .navButton:disabled {
@@ -189,12 +336,145 @@
     cursor: not-allowed;
 }
 
-.resultBox {
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    border-radius: 1rem;
-    padding: 2rem;
+.resultsTitle {
+    font-size: 2rem;
+    color: var(--accent-primary);
+    text-align: center;
     margin-bottom: 2rem;
+}
+
+.resultBox {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.overallResultBox {
+    text-align: center;
+    border-color: rgba(var(--particle-secondary), 0.35);
+    background: rgba(var(--particle-secondary), 0.1);
+}
+
+.overallHeading {
+    font-size: 1.42rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+
+.overallLevel {
+    color: var(--accent-primary);
+}
+
+.overallDescription {
+    color: var(--text-secondary);
+}
+
+.sectionSubheading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 0 1.2rem;
+    color: var(--text-primary);
+}
+
+.resultHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.resultDimension {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.resultLevel {
+    color: var(--accent-primary);
+    font-weight: 700;
+}
+
+.dimensionQuote {
+    font-style: italic;
+    margin-bottom: 0.9rem;
+    color: var(--text-tertiary);
+    font-size: 0.92rem;
+}
+
+.recommendationItem {
+    margin-bottom: 0.95rem;
+}
+
+.recommendationHeadline {
+    color: var(--accent-primary);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.personalizedTag {
+    font-size: 0.75em;
+    color: var(--accent-secondary);
+}
+
+.recommendationText {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.resultActions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.8rem;
+    flex-wrap: wrap;
+}
+
+.leadNotice {
+    margin: 0.85rem 0 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+}
+
+.leadCaptureCard {
+    margin-top: 1rem;
+    border-color: rgba(var(--particle-primary), 0.32);
+}
+
+.leadHeading {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.leadCopy {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.leadForm {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.leadFormGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.leadError {
+    margin: 0;
+    color: #f87171;
+    font-size: 0.9rem;
+}
+
+.leadActions {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 @keyframes fadeIn {
@@ -210,11 +490,36 @@
 }
 
 @media (max-width: 768px) {
-    .contentSection h2 {
-        font-size: 2rem;
+    .gradientHero {
+        padding: 7rem 0 3.5rem;
+    }
+
+    .heroMeta {
+        justify-content: flex-start;
+    }
+
+    .heroSubtitle {
+        font-size: 1rem;
     }
 
     .quizContainer {
-        padding: 1.5rem;
+        padding: 1.2rem;
+    }
+
+    .benefitsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .navRow {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .resultHeader {
+        flex-direction: column;
+    }
+
+    .leadFormGrid {
+        grid-template-columns: 1fr;
     }
 }

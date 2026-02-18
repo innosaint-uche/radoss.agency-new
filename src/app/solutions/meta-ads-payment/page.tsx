@@ -5,14 +5,14 @@ import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
     title: "Pay Meta Ads in Naira | Radoss Agency Nigeria",
-    description: "Official Meta Business Partner solution. Pay for Facebook & Instagram Ads in Naira without dollar card limits. Seamless, compliant, and efficient.",
+    description: "Pay for Facebook and Instagram ads in Naira through a compliant Meta Business Partner workflow without card-limit disruption.",
     keywords: ["pay for facebook ads in naira", "meta business partner nigeria", "instagram ads payment nigeria", "no dollar limit card", "naira virtual card for ads"],
     alternates: {
         canonical: "https://radoss.agency/solutions/meta-ads-payment",
     },
     openGraph: {
         title: "Pay Meta Ads in Naira | Radoss Agency Nigeria",
-        description: "Official Meta Business Partner solution. Pay for Facebook & Instagram Ads in Naira without dollar card limits.",
+        description: "Fund Meta ad campaigns in Naira through a compliant and reliable local payment workflow.",
         url: "https://radoss.agency/solutions/meta-ads-payment",
         siteName: "Radoss Agency",
         images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Pay Meta Ads in Naira | Radoss Agency",
-        description: "Bypass dollar limits and pay for your Meta ads in Naira securely.",
+        description: "Run uninterrupted Meta campaigns with compliant local-currency funding.",
         images: ["/images/solutions/meta-ads-og.png"],
     },
 };
@@ -55,22 +55,22 @@ export default function MetaAdsPaymentPage() {
     const features = [
         {
             title: "No Dollar Limits",
-            description: "Bypass the restrictive international spending limits on standard Nigerian debit cards. Scale your ad spend without friction.",
+            description: "Avoid international card spending constraints and scale campaign delivery with predictable local funding.",
             icon: <span className="feature-num">01</span>
         },
         {
             title: "Meta Business Partner",
-            description: "As verified partners, we offer a compliant, secure, and officially recognized channel for ad payments and account management.",
+            description: "Operate through a verified partner channel with compliant payment support and dependable operational guidance.",
             icon: <span className="feature-num">02</span>
         },
         {
             title: "Instant Account Funding",
-            description: "Say goodbye to campaign pauses. Our local payment infrastructure ensures your ad accounts are funded instantly.",
+            description: "Minimize downtime from funding delays and maintain media continuity across active ad sets.",
             icon: <span className="feature-num">03</span>
         },
         {
             title: "Dedicated Support",
-            description: "Access official support channels for ad account issues, bans, or verification hurdles that standard users can't reach.",
+            description: "Get faster escalation support for account friction points including verification and delivery interruptions.",
             icon: <span className="feature-num">04</span>
         }
     ];
@@ -83,7 +83,7 @@ export default function MetaAdsPaymentPage() {
                 kicker="Meta Business Partner"
                 title="Pay Meta Ads in Naira"
                 subtitle="Advertise Globally. Pay Locally."
-                description="Eliminate payment friction. We provide a seamless, compliant solution for Nigerian businesses to fund Facebook and Instagram ad campaigns in Naira, unrestricted."
+                description="Remove payment friction from your growth strategy with a local-currency funding workflow designed for campaign continuity."
             />
 
             <section className="container" style={{ paddingBottom: '100px' }}>
@@ -91,7 +91,7 @@ export default function MetaAdsPaymentPage() {
 
                 <SolutionCTA
                     title="Uncap Your Potential"
-                    description="Stop letting payment limits dictate your growth. Join hundreds of businesses using our compliant payment channel."
+                    description="Stop letting card limits slow down growth and keep your campaigns running when it matters."
                 />
             </section>
         </>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView, useAnimation } from "@/lib/motion";
 import { useEffect, useRef } from "react";
 
 interface RevealProps {

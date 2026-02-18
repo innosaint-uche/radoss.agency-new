@@ -1,31 +1,72 @@
-"use client";
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import styles from './page.module.css';
 import InteractiveBackground from '../../components/InteractiveBackground';
 import { Section } from '../../components/Section';
 import { Reveal } from '../../components/Reveal';
+import SchemaMarkup from '../../components/SchemaMarkup';
+
+export const metadata: Metadata = {
+    title: 'Our Approach | Integrated Growth Methodology',
+    description: 'Discover the Radoss methodology for connecting business strategy, marketing execution, and technology systems into one growth engine.',
+    keywords: [
+        'integrated marketing approach',
+        'business marketing technology synergy',
+        'growth methodology',
+        'digital transformation strategy',
+    ],
+    alternates: {
+        canonical: 'https://radoss.agency/approach',
+    },
+    openGraph: {
+        title: 'Our Approach | Radoss Agency',
+        description: 'A practical methodology for aligning strategy, execution, and systems to deliver measurable outcomes.',
+        url: 'https://radoss.agency/approach',
+        siteName: 'Radoss Agency',
+        locale: 'en_NG',
+        type: 'website',
+    },
+};
+
+const approachSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Radoss Agency Approach',
+    url: 'https://radoss.agency/approach',
+    description: 'Integrated methodology for business strategy, marketing execution, and technology alignment.',
+};
 
 const approaches = [
     {
-        title: "Holistic Journey Mapping",
-        desc: "We go beyond isolated channels to analyze the entire consumer journey. By identifying key touchpoints and opportunities, we create strategies that are cohesive, relevant, and effective at every stage.",
-        icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" // Check circle
+        title: 'Holistic Journey Mapping',
+        desc: 'We map the complete customer and revenue journey, from demand creation to retention. This reveals hidden drop-off points, channel dependencies, and growth opportunities that isolated teams typically miss.',
+        icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+        accent: 'blue',
     },
     {
-        title: "Integrated Service Delivery",
-        desc: "As a full-service agency, we offer a seamless, one-stop solution. From digital campaigns and tech integration to traditional media, we provide unified expertise under one roof, eliminating silos.",
-        icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" // Briefcase/Kit
+        title: 'Integrated Service Delivery',
+        desc: 'Our model unifies strategy, campaign operations, and technology implementation under one coordinated delivery plan. This removes handoff friction and protects execution quality across the lifecycle.',
+        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+        accent: 'gold',
     },
     {
-        title: "Business + Marketing + Tech Synergy",
-        desc: "Our core philosophy aligns your business objectives, marketing initiatives, and technology stack. We ensure they work in concert to amplify impact and drive sustainable growth, rather than competing for resources.",
-        icon: "M13 10V3L4 14h7v7l9-11h-7z" // Lightning
-    }
+        title: 'Business + Marketing + Tech Synergy',
+        desc: 'Every initiative is evaluated against business goals, market realities, and technology readiness. The result is faster decision-making, better resource utilization, and sustainable growth.',
+        icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+        accent: 'sand',
+    },
 ];
+
+const accentClass = {
+    blue: styles.cardBlue,
+    gold: styles.cardGold,
+    sand: styles.cardSand,
+} as const;
 
 export default function Approach() {
     return (
         <main className={styles.main}>
-            {/* Reusing InteractiveBackground for consistency, or we could customize it */}
+            <SchemaMarkup data={approachSchema} />
             <InteractiveBackground />
 
             <header className={styles.header}>
@@ -44,11 +85,11 @@ export default function Approach() {
             <Section className={styles.introSection}>
                 <div className={styles.introGrid}>
                     <Reveal>
-                        <h2 className={styles.sectionTitle}>Comprehensive Results.</h2>
+                        <h2 className={styles.sectionTitle}>Built for Measurable Outcomes.</h2>
                     </Reveal>
                     <Reveal delay={0.2}>
                         <p className={styles.text}>
-                            We don&apos;t just tick boxes. We examine the entire ecosystem of your business to find connections others miss.
+                            We design growth systems, not disconnected tactics. The Radoss approach links strategic intent to campaign execution and technology adoption, so each decision compounds business impact over time.
                         </p>
                     </Reveal>
                 </div>
@@ -57,8 +98,8 @@ export default function Approach() {
             <Section className={styles.approachSection}>
                 <div className={styles.grid}>
                     {approaches.map((item, i) => (
-                        <Reveal key={i} delay={i * 0.1}>
-                            <div className={styles.card}>
+                        <Reveal key={item.title} delay={i * 0.1} width="100%">
+                            <div className={`${styles.card} ${accentClass[item.accent]}`}>
                                 <div className={styles.iconBox}>
                                     <svg className={styles.icon} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
@@ -70,6 +111,23 @@ export default function Approach() {
                         </Reveal>
                     ))}
                 </div>
+            </Section>
+
+            <Section className={styles.frameworkSection}>
+                <Reveal>
+                    <div className={styles.frameworkCard}>
+                        <span className={styles.frameworkLabel}>Strategic Framework</span>
+                        <h2 className={styles.frameworkTitle}>M-C-I-A: Map, Connect, Implement, Analyse</h2>
+                        <p className={styles.frameworkText}>
+                            Explore our full M-C-I-A methodology in depth. This strategic flywheel explains how we
+                            diagnose market reality, align customer relevance, execute with operational precision, and
+                            compound learning through analytics and iteration.
+                        </p>
+                        <Link href="/approach/mcia-strategic-framework" className="btn btn-primary">
+                            Explore M-C-I-A Framework
+                        </Link>
+                    </div>
+                </Reveal>
             </Section>
         </main>
     );

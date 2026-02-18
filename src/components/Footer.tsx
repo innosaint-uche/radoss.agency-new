@@ -31,6 +31,8 @@ export default function Footer() {
                         <div className={styles.column}>
                             <h4>Agency</h4>
                             <Link href="/">Home</Link>
+                            <Link href="/approach">Approach</Link>
+                            <Link href="/approach/mcia-strategic-framework">M-C-I-A Framework</Link>
                             <Link href="/about">About Us</Link>
                             <Link href="/work">Selected Works</Link>
                         </div>

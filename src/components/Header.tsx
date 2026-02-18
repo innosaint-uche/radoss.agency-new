@@ -5,7 +5,9 @@ import styles from './Header.module.css';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
+    { label: 'Approach', href: '/approach' },
     { label: 'Expertise', href: '/expertise' },
+    { label: 'Solutions', href: '/solutions' },
     { label: 'Work', href: '/work' },
     { label: 'Agency', href: '/about' },
     { label: 'Contact', href: '/contact' },
@@ -57,4 +59,3 @@ export default function Header() {
         </header>
     );
 }
-

@@ -4,15 +4,15 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
-    title: "Radoss Digital | High-ROI Performance Marketing Agency",
-    description: "Data-driven performance marketing services. PPC, SEO, and Programmatic advertising that delivers measurable growth for ambitious brands.",
-    keywords: ["performance marketing agency", "PPC management", "ROI driven marketing", "programmatic advertising", "digital growth agency"],
+    title: "Radoss Digital | Performance Marketing for Revenue Growth",
+    description: "Performance marketing services covering SEO, paid media, analytics, and conversion optimization for measurable revenue growth.",
+    keywords: ["performance marketing agency", "PPC management", "SEO and paid media", "programmatic advertising", "digital growth agency"],
     alternates: {
         canonical: "https://radoss.agency/solutions/radoss-digital",
     },
     openGraph: {
-        title: "Radoss Digital | High-ROI Performance Marketing Agency",
-        description: "Data-driven performance marketing services. PPC, SEO, and Programmatic advertising that delivers measurable growth.",
+        title: "Radoss Digital | Performance Marketing for Revenue Growth",
+        description: "Integrated SEO, paid media, analytics, and conversion programs for ambitious brands.",
         url: "https://radoss.agency/solutions/radoss-digital",
         siteName: "Radoss Agency",
         images: [
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Radoss Digital | High-ROI Performance Marketing Agency",
-        description: "Data-driven performance marketing services that deliver measurable growth.",
+        title: "Radoss Digital | Performance Marketing for Revenue Growth",
+        description: "Performance marketing services designed for measurable business outcomes.",
         images: ["/images/solutions/radoss-digital-og.png"],
     },
 };
@@ -39,7 +39,7 @@ export default function RadossDigitalPage() {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Radoss Digital",
-        "description": "Premium performance marketing agency specializing in high-ROI campaigns.",
+        "description": "Performance marketing solution for organizations that need attributable growth outcomes.",
         "url": "https://radoss.agency/solutions/radoss-digital",
         "serviceType": "Performance Marketing",
         "areaServed": "Global",
@@ -52,22 +52,22 @@ export default function RadossDigitalPage() {
     const features = [
         {
             title: "Precision Targeting",
-            description: "We don't guess. We utilize advanced audience segmentation and behavioral data to ensure your ad spend reaches exactly the right eyes.",
+            description: "Audience, intent, and behavior modeling to direct spend toward high-propensity segments and reduce wasted impressions.",
             icon: <span className="feature-num">01</span>
         },
         {
             title: "Data-Driven Creative",
-            description: "Art meets Science. Our creative strategies are informed by real-time performance metrics, ensuring high engagement and conversion rates.",
+            description: "Creative strategy informed by real-time signals, structured testing, and conversion feedback loops.",
             icon: <span className="feature-num">02</span>
         },
         {
             title: "Full-Funnel Attribution",
-            description: "We track every touchpoint. From first click to final conversion, giving you a crystal-clear view of your ROI across all channels.",
+            description: "Channel and campaign attribution that connects media investment to pipeline and revenue outcomes.",
             icon: <span className="feature-num">03</span>
         },
         {
             title: "Programmatic Scale",
-            description: "Leveraging automated buying to access premium inventory at efficient rates, scaling your reach beyond walled gardens.",
+            description: "Automated buying and optimization that expands quality reach while maintaining efficiency targets.",
             icon: <span className="feature-num">04</span>
         }
     ];
@@ -80,7 +80,7 @@ export default function RadossDigitalPage() {
                 kicker="Radoss Digital"
                 title="Performance Marketing"
                 subtitle="Growth, Quantified."
-                description="We combine deep analytical rigor with compelling creative to drive measurable business outcomes. Stop paying for impressions. Start paying for growth."
+                description="We combine analytical rigor, creative discipline, and channel expertise to convert media spend into measurable business growth."
             />
 
             <section className="container" style={{ paddingBottom: '100px' }}>
@@ -88,7 +88,7 @@ export default function RadossDigitalPage() {
 
                 <SolutionCTA
                     title="Ready to Scale?"
-                    description="Partner with a team that treats your budget like their own."
+                    description="Partner with a team that ties campaign strategy directly to revenue accountability."
                     mainCTA={{
                         label: "Visit Radoss Digital",
                         href: "https://radossdigital.com",

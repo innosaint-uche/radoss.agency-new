@@ -2,6 +2,7 @@
     padding: 180px 0 100px;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .heroContent {
@@ -44,15 +45,7 @@
 }
 
 .backgroundGlow {
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 80%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(71, 69, 214, 0.15) 0%, rgba(0,0,0,0) 70%);
-    z-index: 0;
-    pointer-events: none;
-    filter: blur(80px);
+    display: none;
 }
 
 /* Feature Grid */

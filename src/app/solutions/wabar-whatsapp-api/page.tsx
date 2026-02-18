@@ -5,14 +5,14 @@ import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
     title: "WABAR by Radoss | Enterprise WhatsApp Business API",
-    description: "Official WhatsApp Business API solution. Automate customer support, drive sales, and integrate chatbots with WABAR by Radoss.",
+    description: "Official WhatsApp Business API solution for support automation, broadcast campaigns, and conversational commerce workflows.",
     keywords: ["whatsapp business api nigeria", "whatsapp chatbot for business", "official meta whatsapp api", "wabar whatsapp solution", "conversational commerce"],
     alternates: {
         canonical: "https://radoss.agency/solutions/wabar-whatsapp-api",
     },
     openGraph: {
         title: "WABAR by Radoss | Enterprise WhatsApp Business API",
-        description: "Official WhatsApp Business API solution. Automate, scale, and sell on WhatsApp.",
+        description: "Automate customer conversations, scale support, and drive sales with the official WhatsApp API.",
         url: "https://radoss.agency/solutions/wabar-whatsapp-api",
         siteName: "Radoss Agency",
         images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "WABAR | Enterprise WhatsApp Solutions",
-        description: "Scale your business with the official WhatsApp Business API.",
+        description: "Scale support and sales operations with the official WhatsApp Business API.",
         images: ["/images/solutions/wabar-og.png"],
     },
 };
@@ -41,7 +41,7 @@ export default function WabarPage() {
         "name": "WABAR by Radoss",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "Enterprise-grade WhatsApp Business API solution for automation and commerce.",
+        "description": "Enterprise-grade WhatsApp Business API service for automation, support, and commerce use cases.",
         "url": "https://radoss.agency/solutions/wabar-whatsapp-api",
         "provider": {
             "@type": "Organization",
@@ -52,23 +52,23 @@ export default function WabarPage() {
     const features = [
         {
             title: "Official API Access",
-            description: "Direct integration with Meta's independent WhatsApp Business API. Verified Green Tick application support included.",
-            icon: <span style={{ fontSize: '24px' }}>✅</span>
+            description: "Direct onboarding and implementation support for official WhatsApp Business API access and compliant messaging operations.",
+            icon: <span className="feature-num">01</span>
         },
         {
             title: "Smart Automation & Chatbots",
-            description: "Deploy AI-driven agents to handle FAQs, booking, and support 24/7. Reduce support costs while increasing engagement.",
-            icon: <span style={{ fontSize: '24px' }}>🤖</span>
+            description: "Deploy structured automation for FAQs, lead qualification, booking flows, and always-on support experiences.",
+            icon: <span className="feature-num">02</span>
         },
         {
             title: "Broadcast Campaigns",
-            description: "Send personalized, template-approved messages to thousands of customers instantly. High open rates for high-impact alerts.",
-            icon: <span style={{ fontSize: '24px' }}>📢</span>
+            description: "Execute template-compliant broadcast journeys for lifecycle messaging, promotions, reminders, and alerts.",
+            icon: <span className="feature-num">03</span>
         },
         {
             title: "eCommerce Integration",
-            description: "Sync with your inventory. Allow customers to browse via Catalogs and complete purchases directly within WhatsApp.",
-            icon: <span style={{ fontSize: '24px' }}>🛒</span>
+            description: "Integrate catalogs, order flows, and CRM data so customers can discover, inquire, and purchase with less friction.",
+            icon: <span className="feature-num">04</span>
         }
     ];
 
@@ -80,7 +80,7 @@ export default function WabarPage() {
                 kicker="WABAR by Radoss"
                 title="Enterprise WhatsApp Solutions"
                 subtitle="Conversational Commerce at Scale."
-                description="Transform the world's most popular messaging app into your most powerful revenue channel. WABAR provides the infrastructure for enterprise-grade WhatsApp automation."
+                description="Convert WhatsApp into a structured customer communication channel for support, retention, and revenue workflows."
             />
 
             <section className="container" style={{ paddingBottom: '100px' }}>
@@ -88,7 +88,7 @@ export default function WabarPage() {
 
                 <SolutionCTA
                     title="Start the Conversation"
-                    description="Demo WABAR today and see the power of automated messaging."
+                    description="Launch with a reliable API setup, scalable messaging logic, and practical onboarding support."
                     mainCTA={{
                         label: "Get WABAR Access",
                         href: "https://wabar.radoss.agency",

@@ -8,6 +8,14 @@
     margin-bottom: 2rem;
 }
 
+.subtitle {
+    max-width: 920px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -21,17 +29,17 @@
 }
 
 .infoItem h3 {
-    font-family: var(--font-sans);
+    font-family: var(--font-heading);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-gold);
+    color: var(--accent-primary);
     margin-bottom: 1rem;
 }
 
 .infoItem p,
 .infoItem a {
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
     font-size: 1.5rem;
     color: var(--text-primary);
 }
@@ -45,7 +53,7 @@
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     margin-bottom: 1rem;
 }
 
@@ -54,9 +62,9 @@
     width: 100%;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid var(--border-focus);
     color: var(--text-primary);
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
     font-size: 1.5rem;
     padding: 1rem 0;
     transition: border 0.3s ease;
@@ -65,12 +73,12 @@
 .input:focus,
 .textarea:focus {
     outline: none;
-    border-bottom-color: var(--color-gold);
+    border-bottom-color: var(--accent-primary);
 }
 
 .submitButton {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-focus);
     color: var(--text-primary);
     padding: 1.5rem 4rem;
     text-transform: uppercase;
@@ -81,9 +89,27 @@
 }
 
 .submitButton:hover {
-    background: var(--color-gold);
-    border-color: var(--color-gold);
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
     color: #000;
+}
+
+[data-theme='light'] .label {
+    color: rgba(17, 24, 39, 0.78);
+}
+
+[data-theme='light'] .input,
+[data-theme='light'] .textarea {
+    border-bottom-color: rgba(17, 24, 39, 0.45);
+}
+
+[data-theme='light'] .input::placeholder,
+[data-theme='light'] .textarea::placeholder {
+    color: rgba(17, 24, 39, 0.55);
+}
+
+[data-theme='light'] .submitButton {
+    border-color: rgba(17, 24, 39, 0.4);
 }
 
 @media (max-width: 768px) {

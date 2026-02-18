@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import AssessmentTool from './AssessmentTool';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-    title: "Digital Maturity Assessment | Radoss Agency",
-    description: "Evaluate your organization's digital capabilities and receive a bespoke growth roadmap. Free digital audit and transformation scoring.",
+    title: "Free Digital Maturity Assessment Tool | Radoss Agency",
+    description: "Free digital maturity assessment to evaluate readiness across strategy, customer, operations, technology, and culture with instant recommendations.",
     keywords: ["digital maturity assessment", "digital transformation audit", "business digital readiness", "marketing technology audit", "digital growth strategy"],
     alternates: {
         canonical: "https://radoss.agency/solutions/digital-maturity-assessment",
@@ -33,5 +34,55 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <AssessmentTool />;
+    return (
+        <>
+            <SchemaMarkup data={{
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "Radoss Digital Maturity Assessment",
+                "description": "Free interactive tool for assessing organizational digital maturity and generating tailored recommendations.",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "url": "https://radoss.agency/solutions/digital-maturity-assessment",
+                "isAccessibleForFree": true,
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                }
+            }} />
+            <SchemaMarkup data={{
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is the Digital Maturity Assessment free?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. The Radoss Digital Maturity Assessment is free to complete and includes instant scoring and downloadable results."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does the assessment take?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most teams complete the assessment in under 10 minutes."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What dimensions are covered?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The tool evaluates Customer, Strategy, Technology, Operations, and Organisation & Culture maturity."
+                        }
+                    }
+                ]
+            }} />
+            <AssessmentTool />
+        </>
+    );
 }
