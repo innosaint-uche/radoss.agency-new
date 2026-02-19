@@ -1,0 +1,82 @@
+[
+  {
+    "claim_id": "CLM-001",
+    "claim_text": "Radoss positions itself as the nexus of business, marketing, and technology for integrated growth execution.",
+    "supporting_urls": [
+      "https://radoss.agency/",
+      "file:///Users/radossagency/Downloads/Radoss Portfolio.pdf"
+    ],
+    "confidence": 0.99,
+    "slide_id": "S04"
+  },
+  {
+    "claim_id": "CLM-002",
+    "claim_text": "The updated portfolio documents 9 case-study streams including Gerocare, Halogen Security, Eatalia, Healthtracka, Zenith, Miva, Bracken, and HippoAds.",
+    "supporting_urls": [
+      "file:///Users/radossagency/Downloads/Radoss Portfolio.pdf",
+      "https://radoss.agency/work"
+    ],
+    "confidence": 0.98,
+    "slide_id": "S18-S26"
+  },
+  {
+    "claim_id": "CLM-003",
+    "claim_text": "Mandilas public channels indicate heritage operations and multi-sector presence across mobility and engineering touchpoints.",
+    "supporting_urls": [
+      "https://www.linkedin.com/company/mandilas-group",
+      "https://www.instagram.com/mandilasgroup/",
+      "https://www.facebook.com/MandilasGroup/",
+      "https://www.mandilasng.com/"
+    ],
+    "confidence": 0.93,
+    "slide_id": "S29"
+  },
+  {
+    "claim_id": "CLM-004",
+    "claim_text": "Toyota Nigeria dealer listing confirms Mandilas service operations in Lagos touchpoints.",
+    "supporting_urls": [
+      "https://toyotanigeria.com/dealers/mandilas-enterprises-ltd/"
+    ],
+    "confidence": 0.95,
+    "slide_id": "S29"
+  },
+  {
+    "claim_id": "CLM-005",
+    "claim_text": "DataReportal 2025 Nigeria reports 150M mobile connections, 107M internet users, and 38.7M social media identities.",
+    "supporting_urls": [
+      "https://datareportal.com/reports/digital-2025-nigeria"
+    ],
+    "confidence": 0.96,
+    "slide_id": "S30"
+  },
+  {
+    "claim_id": "CLM-006",
+    "claim_text": "World Bank latest Nigeria macro snapshot: urban population 63.0% (2024), inflation 33.2% (2024), GDP growth 4.1% (2024).",
+    "supporting_urls": [
+      "https://api.worldbank.org/v2/country/NGA/indicator/SP.URB.TOTL.IN.ZS?format=json&per_page=70",
+      "https://api.worldbank.org/v2/country/NGA/indicator/FP.CPI.TOTL.ZG?format=json&per_page=70",
+      "https://api.worldbank.org/v2/country/NGA/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=70"
+    ],
+    "confidence": 0.99,
+    "slide_id": "S30"
+  },
+  {
+    "claim_id": "CLM-007",
+    "claim_text": "GSMA SSA mobile economy highlights persistent usage gap and continuing 4G/5G adoption trajectory.",
+    "supporting_urls": [
+      "https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-economy/sub-saharan-africa-2024/"
+    ],
+    "confidence": 0.89,
+    "slide_id": "S30"
+  },
+  {
+    "claim_id": "CLM-008",
+    "claim_text": "Deloitte and PwC consumer/automotive studies indicate stronger demand for digital research, transparent pricing, and frictionless purchase/service journeys.",
+    "supporting_urls": [
+      "https://www.deloitte.com/us/en/insights/industry/automotive/global-automotive-consumer-study.html",
+      "https://www.pwc.com/gx/en/consumer-markets/consumer-insights-survey.html"
+    ],
+    "confidence": 0.84,
+    "slide_id": "S31"
+  }
+]

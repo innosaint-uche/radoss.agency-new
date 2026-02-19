@@ -5,7 +5,6 @@
   <path d="M150 880C180 662 258 560 400 560C542 560 620 662 650 880H150Z" fill="#22334E"/>
   <path d="M225 880C250 710 300 640 400 640C500 640 550 710 575 880H225Z" fill="#162337"/>
   <rect x="265" y="760" width="270" height="120" rx="60" fill="#0F1A2B"/>
-  <text x="400" y="940" fill="#D7E2F7" font-family="Arial, Helvetica, sans-serif" font-size="34" text-anchor="middle" letter-spacing="2.5">TIMI UK</text>
   <defs>
     <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 300) rotate(90) scale(620 620)">
       <stop stop-color="#2F4264"/>

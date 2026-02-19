@@ -258,10 +258,7 @@ export default function About() {
                                         />
                                     </div>
                                     <div className={styles.memberMeta}>
-                                        <h3 className={styles.memberName}>
-                                            {member.name}
-                                            {member.credentials && <span className={styles.memberCredentials}> ({member.credentials})</span>}
-                                        </h3>
+                                        <h3 className={styles.memberName}>{member.name}</h3>
                                         <p className={styles.memberRole}>{member.role}</p>
                                         <p className={styles.memberFocus}>{member.focus}</p>
                                         <p className={styles.memberSummary}>{member.summary}</p>

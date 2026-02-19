@@ -1,0 +1,1107 @@
+[
+  {
+    "slide_no": 1,
+    "slide_title": "Mandilas x Radoss | Partnership Strategy Deck",
+    "objective": "Set panel context, strategic intent, and outcome expectations.",
+    "content_blocks": [
+      {
+        "kind": "hero",
+        "title": "Digital & Creative Partner Presentation",
+        "bullets": [
+          "Prepared for Mandilas Group panel review",
+          "Built from public evidence + updated Radoss portfolio",
+          "Focus: strategic depth, execution capability, measurable outcomes"
+        ]
+      },
+      {
+        "kind": "meta",
+        "title": "What This Deck Delivers",
+        "bullets": [
+          "Agency portfolio and capability depth",
+          "M-C-I-A strategic framework in action",
+          "All relevant case studies with impact logic",
+          "Mandilas-specific strategic recommendations"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/mandilas-logo.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/radoss.png"
+    ],
+    "speaker_notes": "Open with confidence and keep focus on decision quality.",
+    "footnote": "Callout: This version integrates the updated portfolio end-to-end and removes date-based availability confirmation.",
+    "duration_min": 1.2
+  },
+  {
+    "slide_no": 2,
+    "slide_title": "Agenda & Session Flow",
+    "objective": "Show structure and how each question is answered directly.",
+    "content_blocks": [
+      {
+        "kind": "agenda",
+        "title": "Presentation Route",
+        "bullets": [
+          "Section 01: Agency Portfolio Overview",
+          "Section 02: Strategic Framework (deep M-C-I-A)",
+          "Section 03: Notable Campaigns & Impact (all portfolio case studies)",
+          "Section 04: Working with Radoss (Mandilas-specific recommendations)",
+          "Close: governance model, references, contact channels, Q&A"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Set expectations for a high-density but structured walkthrough.",
+    "footnote": "Navigation cue: Section breakers appear at the start of each Mandilas request block.",
+    "duration_min": 1.1
+  },
+  {
+    "slide_no": 3,
+    "slide_title": "SECTION 01 | Agency Portfolio Overview",
+    "objective": "Page breaker for Question 1.",
+    "content_blocks": [
+      {
+        "kind": "breaker",
+        "title": "Background • Team • Capabilities • Brands Served"
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Explicitly anchor this to Request Item 1 from Mandilas.",
+    "footnote": "Section marker aligned to client request item 1.",
+    "duration_min": 0.7
+  },
+  {
+    "slide_no": 4,
+    "slide_title": "Who We Are | The Nexus of Business, Marketing & Technology",
+    "objective": "Define positioning and value lens from both current site and portfolio.",
+    "content_blocks": [
+      {
+        "kind": "position",
+        "title": "Integrated Growth Positioning",
+        "body": "Radoss bridges strategic intent, execution discipline, and technology enablement to unlock measurable business growth."
+      },
+      {
+        "kind": "dna",
+        "title": "Portfolio-Derived Brand Perspective",
+        "bullets": [
+          "Interconnected solutions over siloed services",
+          "Growth architecture that aligns business + marketing + systems",
+          "Lagos headquartered with local execution and regional relevance"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/radoss.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/public/radoss-logo.jpg"
+    ],
+    "speaker_notes": "Use visual balance to avoid dead space and reinforce brand architecture.",
+    "footnote": "Evidence: radoss.agency positioning language + updated portfolio narrative.",
+    "duration_min": 1.5
+  },
+  {
+    "slide_no": 5,
+    "slide_title": "Leadership & Key Team",
+    "objective": "Present full leadership and delivery continuity across strategy, operations, and execution.",
+    "content_blocks": [
+      {
+        "kind": "team",
+        "title": "Core Team",
+        "bullets": [
+          "Uchenna Innocent, MCIM — Chief Digital Architect & Founder",
+          "Timi Uk — Chief Operating Officer & Co-Founder",
+          "Ebere Agbaje — Business Operations Lead"
+        ]
+      },
+      {
+        "kind": "coverage",
+        "title": "Execution Lens",
+        "bullets": [
+          "Business and transformation strategy ownership",
+          "Performance and brand operations governance",
+          "Research intelligence, analytics, and optimization control"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "https://res.cloudinary.com/innosaint/image/upload/v1759535536/Uchenna-Innocent_headshot_nzenth.jpg",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/public/images/team/timi-uk-silhouette.svg",
+      "https://media.licdn.com/dms/image/v2/D4D03AQHarcZat2nPZw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719027089306?e=2147483647&v=beta&t=qEoLB81CVNV6nJK594wiSEHdc8D2ROPySo4U4kI5rg4"
+    ],
+    "speaker_notes": "Demonstrate that this is a real operating team, not a single-person pitch.",
+    "footnote": "Callout: Leadership-to-delivery continuity is built into the operating model.",
+    "duration_min": 1.7
+  },
+  {
+    "slide_no": 6,
+    "slide_title": "Core Service Offerings & In-House Capabilities",
+    "objective": "Map capability pillars to practical business outcomes.",
+    "content_blocks": [
+      {
+        "kind": "digital",
+        "title": "Digital & Performance Marketing",
+        "bullets": [
+          "SEO and content strategy",
+          "PPC and paid media",
+          "Social and lifecycle automation",
+          "Analytics and attribution"
+        ]
+      },
+      {
+        "kind": "transform",
+        "title": "Business & Digital Transformation",
+        "bullets": [
+          "Sales-marketing alignment",
+          "MarTech/process optimization",
+          "Systems integration",
+          "Change management support"
+        ]
+      },
+      {
+        "kind": "brand",
+        "title": "Brand & Traditional Marketing",
+        "bullets": [
+          "Brand strategy and identity",
+          "ATL/BTL activation design",
+          "Integrated TTL campaign planning"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Keep this as capability architecture, not a generic service list.",
+    "footnote": "Outcome lens: acquisition, operational efficiency, and brand trust growth.",
+    "duration_min": 1.5
+  },
+  {
+    "slide_no": 7,
+    "slide_title": "Brand Reference Matrix | Full Portfolio Coverage",
+    "objective": "Show complete visible brand footprint with no empty slots.",
+    "content_blocks": [
+      {
+        "kind": "brands",
+        "title": "Portfolio + Site Referenced Brands",
+        "bullets": [
+          "Gerocare",
+          "Halogen Security",
+          "Eatalia",
+          "Healthtracka",
+          "Zenith Bank",
+          "Miva University",
+          "Bracken",
+          "HippoAds",
+          "Indomie (Tolaram)",
+          "Palmpay"
+        ]
+      },
+      {
+        "kind": "proof",
+        "title": "Proof Basis",
+        "body": "Logos sourced from portfolio context, public brand endpoints, and radoss.agency case references."
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/gerocare.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/halogen.jpg",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/eatalia.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/healthtracka.svg",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/zenith.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/miva.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/bracken.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/hippoads.jpg",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/indomie.svg",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/palmpay.jpg"
+    ],
+    "speaker_notes": "Explicitly mention this addresses the ask for full brand matrix depth.",
+    "footnote": "Design intent: full-logo matrix with stylistic spacing and parity.",
+    "duration_min": 1.6
+  },
+  {
+    "slide_no": 8,
+    "slide_title": "Portfolio Perspective | Continuity, Learning, Maturity",
+    "objective": "Use the updated portfolio as a capability maturity signal.",
+    "content_blocks": [
+      {
+        "kind": "continuity",
+        "title": "Consistency Signals",
+        "bullets": [
+          "Integrated strategic posture remains consistent",
+          "Case-led evidence orientation across sectors",
+          "Expanded execution depth in performance + operations"
+        ]
+      },
+      {
+        "kind": "learning",
+        "title": "What Changed in Updated Portfolio",
+        "bullets": [
+          "Broader case coverage in 2022–2026 window",
+          "Clearer challenge-to-achievement articulation",
+          "Stronger evidence for full-funnel operating capability"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Downloads/Radoss Portfolio.pdf"
+    ],
+    "speaker_notes": "Frame this as progression and operating maturity.",
+    "footnote": "Source: updated portfolio attachment (inclusion, not replacement).",
+    "duration_min": 1.2
+  },
+  {
+    "slide_no": 9,
+    "slide_title": "SECTION 02 | Strategic Framework",
+    "objective": "Page breaker for Question 2.",
+    "content_blocks": [
+      {
+        "kind": "breaker",
+        "title": "Business Objectives → Insight-Led Strategy → Compounding Outcomes"
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Transition to strategic methodology depth.",
+    "footnote": "Section marker aligned to client request item 2.",
+    "duration_min": 0.7
+  },
+  {
+    "slide_no": 10,
+    "slide_title": "Strategic Philosophy | Outcomes over Activity",
+    "objective": "Explain how business goals are translated into actionable strategy.",
+    "content_blocks": [
+      {
+        "kind": "principle",
+        "title": "Translation Model",
+        "bullets": [
+          "Start from explicit business objectives and constraints",
+          "Form customer, market, and channel hypotheses",
+          "Prioritize experiments with commercial relevance",
+          "Scale what works; retire what does not"
+        ]
+      },
+      {
+        "kind": "discipline",
+        "title": "Decision Discipline",
+        "bullets": [
+          "Evidence before assumptions",
+          "Operating rhythm before campaign bursts",
+          "Measurement before scale"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Keep language boardroom-grade and operationally concrete.",
+    "footnote": "Callout: this philosophy governs every case-study execution path.",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 11,
+    "slide_title": "M-C-I-A Overview | Strategic Flywheel",
+    "objective": "Present the Map-Connect-Implement-Analyse cycle as an operating system.",
+    "content_blocks": [
+      {
+        "kind": "flywheel",
+        "title": "Map → Connect → Implement → Analyse",
+        "body": "A continuous cycle where each phase upgrades the next decision and compounds ROI."
+      },
+      {
+        "kind": "benefits",
+        "title": "Compounding Benefits",
+        "bullets": [
+          "Higher decision quality",
+          "Lower channel waste",
+          "Faster adaptation to market shifts",
+          "Stronger cross-team accountability"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Use this as the anchor before going phase-by-phase.",
+    "footnote": "Footnote: M-C-I-A is applied as a rhythm, not a one-off planning exercise.",
+    "duration_min": 1.4
+  },
+  {
+    "slide_no": 12,
+    "slide_title": "M | Map the Market",
+    "objective": "Detail market diagnosis, opportunity mapping, and strategic choice architecture.",
+    "content_blocks": [
+      {
+        "kind": "questions",
+        "title": "Diagnostic Questions",
+        "bullets": [
+          "Where is value concentration highest?",
+          "What constraints shape execution viability?",
+          "What opportunity windows are currently underplayed?"
+        ]
+      },
+      {
+        "kind": "outputs",
+        "title": "Outputs & Gates",
+        "bullets": [
+          "Market opportunity map",
+          "Risk register + mitigation owners",
+          "Priority stack linked to KPI baseline"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Emphasize that execution quality starts with mapping quality.",
+    "footnote": "Decision note: no implementation begins without KPI baseline and risk ownership.",
+    "duration_min": 1.2
+  },
+  {
+    "slide_no": 13,
+    "slide_title": "C | Connect with the Consumer",
+    "objective": "Convert insight into relevance, trust, and conversion architecture.",
+    "content_blocks": [
+      {
+        "kind": "questions",
+        "title": "Insight Questions",
+        "bullets": [
+          "What is the real job-to-be-done?",
+          "Where do trust and friction break?",
+          "Which message-value exchange drives action?"
+        ]
+      },
+      {
+        "kind": "outputs",
+        "title": "Outputs",
+        "bullets": [
+          "Audience and intent blueprint",
+          "Journey intervention map",
+          "Message architecture by stage and segment"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Tie consumer clarity directly to media and creative performance.",
+    "footnote": "Consumer lens: relevance + trust + speed drive both acquisition and retention.",
+    "duration_min": 1.2
+  },
+  {
+    "slide_no": 14,
+    "slide_title": "I | Implement with Impact",
+    "objective": "Show brief-to-rollout execution system and accountability model.",
+    "content_blocks": [
+      {
+        "kind": "system",
+        "title": "Execution System",
+        "bullets": [
+          "Roadmap with clear ownership",
+          "Cross-functional dependencies managed upfront",
+          "Instrumentation and attribution readiness"
+        ]
+      },
+      {
+        "kind": "cadence",
+        "title": "Operating Cadence",
+        "bullets": [
+          "Weekly standups and campaign checks",
+          "Bi-weekly optimization gates",
+          "Monthly executive review"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Position implementation as a managed operating system.",
+    "footnote": "Delivery note: rigor in cadence is what preserves consistency under pressure.",
+    "duration_min": 1.2
+  },
+  {
+    "slide_no": 15,
+    "slide_title": "A | Analyse, Adapt & Amplify",
+    "objective": "Detail measurement and optimization mechanics.",
+    "content_blocks": [
+      {
+        "kind": "loop",
+        "title": "Optimization Loop",
+        "bullets": [
+          "Leading + lagging KPI scorecards",
+          "Causal diagnostics on performance shifts",
+          "Budget and channel reallocation rules"
+        ]
+      },
+      {
+        "kind": "amplify",
+        "title": "Compounding Strategy",
+        "bullets": [
+          "Codify winning patterns",
+          "Deploy fast iteration cycles",
+          "Feed learnings back into next Map phase"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Keep this tied to measurable business movement.",
+    "footnote": "Evidence note: each analysis cycle upgrades future execution quality.",
+    "duration_min": 1.2
+  },
+  {
+    "slide_no": 16,
+    "slide_title": "Data, Consumer Insights & Market Intelligence Stack",
+    "objective": "Show how data and intelligence are operationalized in planning and optimization.",
+    "content_blocks": [
+      {
+        "kind": "inputs",
+        "title": "Intelligence Inputs",
+        "bullets": [
+          "Search and social intent signals",
+          "Journey analytics and conversion telemetry",
+          "Competitive context and category trend tracking",
+          "Macro-demand and affordability signals"
+        ]
+      },
+      {
+        "kind": "decisions",
+        "title": "How It Is Used",
+        "bullets": [
+          "Channel and budget weighting",
+          "Creative and offer refinement",
+          "Service-experience and retention optimization",
+          "Leadership reporting and decision checkpoints"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "This slide answers how data is used, not just collected.",
+    "footnote": "Sources integrated in recommendation section: DataReportal [6], World Bank [7], GSMA [8], Deloitte [9], PwC [10].",
+    "duration_min": 1.1
+  },
+  {
+    "slide_no": 17,
+    "slide_title": "SECTION 03 | Notable Campaigns & Impact",
+    "objective": "Page breaker for Question 3.",
+    "content_blocks": [
+      {
+        "kind": "breaker",
+        "title": "Challenge • Creative/Execution Approach • Channels • Outcomes"
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Signal full case-study depth from updated portfolio.",
+    "footnote": "Section marker aligned to client request item 3.",
+    "duration_min": 0.7
+  },
+  {
+    "slide_no": 18,
+    "slide_title": "Case 1 | Gerocare (2025–2026) — Health-Tech Performance Marketing",
+    "objective": "Show acquisition + visibility gains under attribution constraints.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Needed nationwide awareness and qualified inquiries for elderly healthcare plans while attribution was constrained by backend integration limits."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "SEO optimization and keyword tracking",
+          "GA/Search Console behavioral monitoring",
+          "Meta funnel: Awareness + Traffic + WhatsApp"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Organic impressions improved 30–50%",
+          "Landing engagement efficiency improved 15–25%",
+          "Inbound inquiries increased 4–6x within budget guardrails"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/gerocare.png"
+    ],
+    "speaker_notes": "Lead with business problem, then show measured response.",
+    "footnote": "Portfolio evidence: Gerocare case pages (updated portfolio).",
+    "duration_min": 1.5
+  },
+  {
+    "slide_no": 19,
+    "slide_title": "Case 2 | Halogen Security (2025–2026) — Enterprise Performance Campaigns",
+    "objective": "Show B2B demand generation in a trust-sensitive sector.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Needed enterprise-grade qualified inquiries for security services while preserving brand authority in a high-trust category."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "Targeted paid media for enterprise audiences",
+          "Campaigns for services and cyber-training offers",
+          "Message framing around credibility and decision confidence"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Measurable growth in qualified B2B inquiries",
+          "Category-fit campaign positioning for risk-sensitive buyers"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/halogen.jpg"
+    ],
+    "speaker_notes": "Emphasize complexity: trust-intensive B2B funnel.",
+    "footnote": "Portfolio evidence: Halogen Security case page (updated portfolio).",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 20,
+    "slide_title": "Case 3 | Eatalia (2024–2025) — Digital Process Optimization",
+    "objective": "Demonstrate operational transformation + demand enablement.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Website limitations, fragmented ordering operations, and weak digital engagement consistency."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "Built website and online ordering infrastructure",
+          "Implemented POS, inventory, and stock systems",
+          "Strengthened social content and brand consistency"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Order flow became more reliable and trackable",
+          "Manual errors reduced with real-time visibility",
+          "Digital footfall and convenience increased"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/eatalia.png"
+    ],
+    "speaker_notes": "Show blend of business operations and marketing execution.",
+    "footnote": "Portfolio evidence: Eatalia case page (updated portfolio).",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 21,
+    "slide_title": "Case 4 | Healthtracka (2023) — Social Conversion Recovery",
+    "objective": "Show turnaround on underperforming social channels.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Underperforming Facebook, Instagram, and Twitter channels needed conversion recovery."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "Audience-aligned targeting on Meta and Twitter",
+          "Message architecture designed for stronger resonance",
+          "Creative optimization focused on trust and relevance"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Improved brand affinity and recall",
+          "Stronger conversion movement on previously weak channels"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/healthtracka.svg"
+    ],
+    "speaker_notes": "Treat this as performance triage and recovery.",
+    "footnote": "Portfolio evidence: Healthtracka social conversion case (updated portfolio).",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 22,
+    "slide_title": "Case 5 | Healthtracka (2023) — SEM / Display / Programmatic",
+    "objective": "Show multi-channel intent capture and funnel progression.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Needed search and programmatic capability to convert high-intent audiences beyond social channels."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "Built SEM execution on Google ad platforms",
+          "Rolled out funnel sequencing to guide audience to conversion",
+          "Aligned trust messaging with category sensitivity"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Improved search-led visibility and intent capture",
+          "Stronger conversion consistency across channel mix"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/healthtracka.svg"
+    ],
+    "speaker_notes": "Differentiate this from slide 21 as a separate activation stream.",
+    "footnote": "Portfolio evidence: Healthtracka SEM/programmatic case (updated portfolio).",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 23,
+    "slide_title": "Case 6 | Zenith Bank (2023–2025) — Acquisition Efficiency",
+    "objective": "Show acquisition economics and promo execution effectiveness.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Targeted minimum 2,000 new accounts through Beta Life promo activation."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "Promo-led social buzz and conversion push",
+          "Targeting and message sequencing for account opening intent"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Reported acquisition benchmark reached",
+          "Reported cost per new account: 750 naira"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/zenith.png"
+    ],
+    "speaker_notes": "Keep stated metrics exactly as portfolio wording.",
+    "footnote": "Portfolio evidence: Zenith Bank case (updated portfolio + radoss.agency/work).",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 24,
+    "slide_title": "Case 7 | Miva University (2025) — Integrated ATL/OOH Support",
+    "objective": "Show coordinated offline-digital planning with cost discipline.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Early enrollment push required offline OOH to complement digital efforts."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "BRT branding route selection against target corridors",
+          "Offline and digital coordination against enrollment timeline"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Visibility improved in high-value routes",
+          "Reported lower OOH campaign cost profile"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/miva.png"
+    ],
+    "speaker_notes": "Demonstrate integrated planning across channels.",
+    "footnote": "Portfolio evidence: Miva University case (updated portfolio + radoss.agency/work).",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 25,
+    "slide_title": "Case 8 | Bracken (2022–2024) — Ad-Tech Execution Support",
+    "objective": "Show subcontract delivery strength and multi-client campaign execution.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Bracken subcontracted social ad execution for client portfolios including Palmpay."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "Data-driven paid media implementation",
+          "Cross-client execution governance and delivery continuity"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Brand awareness improvements across subcontracted accounts",
+          "Expanded audience engagement footprint across campaigns"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/bracken.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/palmpay.jpg"
+    ],
+    "speaker_notes": "Position this as reliability and execution-at-scale evidence.",
+    "footnote": "Portfolio evidence: Bracken case with Palmpay mention (updated portfolio).",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 26,
+    "slide_title": "Case 9 | HippoAds (2023–2024) — Multi-Placement Social Campaign Management",
+    "objective": "Show placement-level execution breadth and campaign management rigor.",
+    "content_blocks": [
+      {
+        "kind": "challenge",
+        "title": "Challenge",
+        "body": "Needed reliable campaign implementation across diverse social placements for subcontracted client portfolios."
+      },
+      {
+        "kind": "approach",
+        "title": "Approach",
+        "bullets": [
+          "Facebook Mobile, Feed, Stories, Audience Network",
+          "Instagram Feed and Stories execution",
+          "Placement-level continuity management"
+        ]
+      },
+      {
+        "kind": "outcome",
+        "title": "Outcome",
+        "bullets": [
+          "Comprehensive placement coverage achieved",
+          "Engagement and reach objectives supported through structured deployment"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/hippoads.jpg"
+    ],
+    "speaker_notes": "Use this to show operational depth in campaign management.",
+    "footnote": "Portfolio evidence: HippoAds case (updated portfolio).",
+    "duration_min": 1.3
+  },
+  {
+    "slide_no": 27,
+    "slide_title": "Cross-Case Impact Synthesis",
+    "objective": "Synthesize common impact patterns from all case studies.",
+    "content_blocks": [
+      {
+        "kind": "patterns",
+        "title": "Observed Impact Patterns",
+        "bullets": [
+          "Acquisition efficiency improvement",
+          "Operational friction reduction",
+          "Execution reliability and continuity",
+          "Brand visibility and engagement lift"
+        ]
+      },
+      {
+        "kind": "insight",
+        "title": "Strategic Read",
+        "body": "Consistent gains come from connecting strategy, execution, and systems instead of running channels in isolation."
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/gerocare.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/halogen.jpg",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/eatalia.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/healthtracka.svg",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/zenith.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/miva.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/bracken.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/hippoads.jpg",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/indomie.svg"
+    ],
+    "speaker_notes": "This is the bridge from evidence to recommendation.",
+    "footnote": "Synthesis is drawn from all portfolio case studies in this deck.",
+    "duration_min": 1.2
+  },
+  {
+    "slide_no": 28,
+    "slide_title": "SECTION 04 | Working with Radoss.",
+    "objective": "Introduce Mandilas-specific strategic recommendation block.",
+    "content_blocks": [
+      {
+        "kind": "breaker",
+        "title": "Industry Signals • Consumer Insight • M-C-I-A Actions • Quick Wins"
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Transition from historical proof into forward model.",
+    "footnote": "Recommendation section grounded in trusted public sources + portfolio delivery evidence.",
+    "duration_min": 0.7
+  },
+  {
+    "slide_no": 29,
+    "slide_title": "Mandilas Context | Opportunity Map",
+    "objective": "Frame Mandilas operating reality from publicly verifiable signals.",
+    "content_blocks": [
+      {
+        "kind": "context",
+        "title": "Public Context Signals",
+        "bullets": [
+          "Mandilas positioned publicly as a heritage Nigerian business with long operating history [1]",
+          "Social/public channels indicate operations across mobility and engineering service touchpoints [2][3][4]",
+          "Toyota dealer listing confirms service footprint and aftersales relevance [5]",
+          "Official website reconstruction presents digital front-door redesign opportunity [4]"
+        ]
+      },
+      {
+        "kind": "implication",
+        "title": "Strategic Implication",
+        "bullets": [
+          "Unify brand narrative across channels and service lines",
+          "Build a conversion-centric digital entry point for inquiries, bookings, and service lifecycle",
+          "Prioritize trust, response speed, and service continuity as growth levers"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/mandilas-logo.png"
+    ],
+    "speaker_notes": "Stay anchored to evidence that can be defended in-room.",
+    "footnote": "Citations: [1]-[5]. Recommendations infer from these public signals.",
+    "duration_min": 1.7
+  },
+  {
+    "slide_no": 30,
+    "slide_title": "Consumer Behaviour & Industry Signals (Nigeria / SSA)",
+    "objective": "Use trusted market signals to shape practical recommendations.",
+    "content_blocks": [
+      {
+        "kind": "signals",
+        "title": "Key Signals",
+        "bullets": [
+          "Nigeria: 150M mobile connections, 107M internet users, 38.7M social identities in 2025 [6]",
+          "Population ~235M; urban population ~63.0% (2024) [7]",
+          "Inflation ~33.2% (2024) reinforces value sensitivity [7]",
+          "SSA connectivity usage gap remains large while adoption rises through 2030 [8]"
+        ]
+      },
+      {
+        "kind": "implications",
+        "title": "Mandilas-Relevant Implications",
+        "bullets": [
+          "Mobile-first discovery and service access are mandatory",
+          "Trust and service responsiveness materially influence conversion",
+          "Retention programs must balance reliability, value, and affordability"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Use this as decision context, not generic market trivia.",
+    "footnote": "Sources: DataReportal [6], World Bank [7], GSMA [8].",
+    "duration_min": 1.7
+  },
+  {
+    "slide_no": 31,
+    "slide_title": "Mandilas Opportunity Areas | Sector-Fit Strategic Lens",
+    "objective": "Translate external insights into concrete priority domains.",
+    "content_blocks": [
+      {
+        "kind": "mobility",
+        "title": "Mobility / Aftersales Opportunity",
+        "bullets": [
+          "Digital service booking and quote requests",
+          "Service reminder and retention lifecycle automation",
+          "Category-specific landing pages by vehicle/service need"
+        ]
+      },
+      {
+        "kind": "engineering",
+        "title": "Engineering / Enterprise Services Opportunity",
+        "bullets": [
+          "B2B lead qualification and account-routing model",
+          "Consultative content and proof-led case storytelling",
+          "Relationship marketing with WhatsApp-assisted service follow-through"
+        ]
+      },
+      {
+        "kind": "consumer",
+        "title": "Consumer Decision Signals",
+        "bullets": [
+          "Higher digital research behavior before purchase/service [9]",
+          "Value-conscious purchasing behavior under inflation pressure [7][10]",
+          "Preference for convenience and speed in service journeys [10]"
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/mandilas-logo.png"
+    ],
+    "speaker_notes": "This is where market data becomes business opportunity choices.",
+    "footnote": "Sources: Deloitte [9], World Bank [7], PwC [10].",
+    "duration_min": 1.7
+  },
+  {
+    "slide_no": 32,
+    "slide_title": "Working with Radoss | M-C-I-A Applied to Mandilas",
+    "objective": "Present practical phase plan with outputs and decision gates.",
+    "content_blocks": [
+      {
+        "kind": "map",
+        "title": "M | Map (Weeks 1-4)",
+        "bullets": [
+          "Demand and category diagnosis by business line",
+          "Channel and competitor gap map",
+          "KPI baseline + risk register"
+        ]
+      },
+      {
+        "kind": "connect",
+        "title": "C | Connect (Weeks 5-8)",
+        "bullets": [
+          "Segmented journeys: retail, fleet, enterprise",
+          "Message architecture by intent stage",
+          "WhatsApp-integrated response workflows"
+        ]
+      },
+      {
+        "kind": "implement_analyse",
+        "title": "I + A | Implement/Analyse (Weeks 9-16)",
+        "bullets": [
+          "Pilot activations with instrumentation",
+          "Dashboard and attribution governance",
+          "Optimization and scale decisions"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Keep this concrete and owner-oriented.",
+    "footnote": "Output at phase end: strategy map, activation blueprint, KPI cockpit, next-quarter scale plan.",
+    "duration_min": 1.4
+  },
+  {
+    "slide_no": 33,
+    "slide_title": "Quick Wins (First 90-120 Days) | Partnership Operating Model",
+    "objective": "Provide immediate-value initiatives and governance rhythm.",
+    "content_blocks": [
+      {
+        "kind": "quickwins",
+        "title": "Quick Wins",
+        "bullets": [
+          "Unified inbound capture for Toyota/Carrier/service inquiries",
+          "High-intent landing pages for service and quote conversion",
+          "WhatsApp reminder and follow-up automation for retention uplift",
+          "Performance dashboard linking spend to inquiries, bookings, and closed outcomes"
+        ]
+      },
+      {
+        "kind": "cadence",
+        "title": "Operating Rhythm",
+        "bullets": [
+          "Weekly execution check-ins",
+          "Bi-weekly optimization gates",
+          "Monthly leadership steering reviews"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Anchor this slide as practical value realization plan.",
+    "footnote": "Execution principle: fast pilots, tight measurement, deliberate scale.",
+    "duration_min": 1.5
+  },
+  {
+    "slide_no": 34,
+    "slide_title": "Governance, Reporting & KPI Model",
+    "objective": "Define accountability, reporting layers, and performance scorecards.",
+    "content_blocks": [
+      {
+        "kind": "governance",
+        "title": "Governance Structure",
+        "bullets": [
+          "Executive sponsor alignment",
+          "Campaign and ops owners with clear responsibilities",
+          "Escalation and risk protocols"
+        ]
+      },
+      {
+        "kind": "kpi",
+        "title": "KPI Categories",
+        "bullets": [
+          "Demand: qualified inquiries / lead quality",
+          "Conversion: booking-to-close rates",
+          "Efficiency: CAC/CPL and channel productivity",
+          "Retention: repeat service and lifecycle value"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "This closes the loop on execution credibility.",
+    "footnote": "Reporting layers: weekly operator view, monthly leadership view, quarterly strategy review.",
+    "duration_min": 1.2
+  },
+  {
+    "slide_no": 35,
+    "slide_title": "References & Citations",
+    "objective": "Provide source transparency for research and recommendation slides.",
+    "content_blocks": [
+      {
+        "kind": "refs",
+        "title": "Source List",
+        "bullets": [
+          "[1] https://www.linkedin.com/company/mandilas-group",
+          "[2] https://www.instagram.com/mandilasgroup/",
+          "[3] https://www.facebook.com/MandilasGroup/",
+          "[4] https://www.mandilasng.com/",
+          "[5] https://toyotanigeria.com/dealers/mandilas-enterprises-ltd/",
+          "[6] https://datareportal.com/reports/digital-2025-nigeria",
+          "[7] World Bank API: SP.URB.TOTL.IN.ZS | FP.CPI.TOTL.ZG | NY.GDP.MKTP.KD.ZG",
+          "[8] https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-economy/sub-saharan-africa-2024/",
+          "[9] https://www.deloitte.com/us/en/insights/industry/automotive/global-automotive-consumer-study.html",
+          "[10] https://www.pwc.com/gx/en/consumer-markets/consumer-insights-survey.html",
+          "[11] /Users/radossagency/Downloads/Radoss Portfolio.pdf",
+          "[12] /Users/radossagency/Documents/Business/Radoss/Contracts/Radoss Portfolio.pdf"
+        ]
+      }
+    ],
+    "visual_assets": [],
+    "speaker_notes": "Keep this visible for defensible Q&A.",
+    "footnote": "All recommendations trace to public sources or supplied portfolio artifacts.",
+    "duration_min": 0.8
+  },
+  {
+    "slide_no": 36,
+    "slide_title": "Contact & Next Steps",
+    "objective": "Close with clear contact channels and partnership handoff.",
+    "content_blocks": [
+      {
+        "kind": "contact",
+        "title": "Radoss Contact Channels",
+        "bullets": [
+          "Website: https://radoss.agency",
+          "Website: https://radossdigital.com",
+          "Email: hello@radossdigital.com",
+          "Phone: +234 703 382 7657 | +234 813 659 1585",
+          "Location: Lagos, Nigeria"
+        ]
+      },
+      {
+        "kind": "close",
+        "title": "Thank You",
+        "bullets": [
+          "Ready for Q&A and deeper implementation discussion."
+        ]
+      }
+    ],
+    "visual_assets": [
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/logos/radoss.png",
+      "file:///Users/radossagency/Documents/Web-Projects/new-radoss.agency/workspace/mandilas-pitch/assets/mandilas-logo.png"
+    ],
+    "speaker_notes": "End with clarity and ease of follow-up.",
+    "footnote": "Final page intentionally includes contact, websites, and email channels.",
+    "duration_min": 0.7
+  }
+]
