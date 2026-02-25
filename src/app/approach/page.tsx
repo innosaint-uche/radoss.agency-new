@@ -63,6 +63,8 @@ const accentClass = {
     sand: styles.cardSand,
 } as const;
 
+import Flywheel from '../../components/Flywheel';
+
 export default function Approach() {
     return (
         <main className={styles.main}>
@@ -116,16 +118,21 @@ export default function Approach() {
             <Section className={styles.frameworkSection}>
                 <Reveal>
                     <div className={styles.frameworkCard}>
-                        <span className={styles.frameworkLabel}>Strategic Framework</span>
-                        <h2 className={styles.frameworkTitle}>M-C-I-A: Map, Connect, Implement, Analyse</h2>
-                        <p className={styles.frameworkText}>
-                            Explore our full M-C-I-A methodology in depth. This strategic flywheel explains how we
-                            diagnose market reality, align customer relevance, execute with operational precision, and
-                            compound learning through analytics and iteration.
-                        </p>
-                        <Link href="/approach/mcia-strategic-framework" className="btn btn-primary">
-                            Explore M-C-I-A Framework
-                        </Link>
+                        <div className={styles.frameworkContent}>
+                            <span className={styles.frameworkLabel}>Strategic Framework</span>
+                            <h2 className={styles.frameworkTitle}>M-C-I-A Model</h2>
+                            <p className={styles.frameworkText}>
+                                Our proprietary <b>Map, Connect, Implement, Analyse</b> methodology.
+                                This strategic flywheel explains how we diagnose market reality, align customer relevance,
+                                execute with precision, and compound learning through data loops.
+                            </p>
+                            <Link href="/approach/mcia-strategic-framework" className="btn btn-primary">
+                                Explore Methodology
+                            </Link>
+                        </div>
+                        <div className={styles.flywheelContainer}>
+                            <Flywheel />
+                        </div>
                     </div>
                 </Reveal>
             </Section>

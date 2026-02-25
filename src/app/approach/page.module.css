@@ -165,8 +165,18 @@
     border: 1px solid var(--border-subtle);
     background: var(--bg-surface);
     background: linear-gradient(145deg, color-mix(in oklab, var(--bg-surface) 90%, transparent), color-mix(in oklab, var(--bg-card) 86%, transparent));
-    padding: 2rem;
+    padding: 3.5rem;
     backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.flywheelContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .frameworkLabel {
@@ -206,6 +216,8 @@
     }
 
     .frameworkCard {
+        grid-template-columns: 1fr;
         padding: 1.5rem;
+        gap: 2rem;
     }
 }

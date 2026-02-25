@@ -46,7 +46,7 @@ export const motion = {
 };
 
 export function AnimatePresence({ children }: { children: React.ReactNode }) {
-    return <>{children}</>;
+    return children as React.ReactElement;
 }
 
 type UseInViewOptions = {

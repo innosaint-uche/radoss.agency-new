@@ -83,7 +83,7 @@ const projects: Project[] = [
             "Increased brand affinity and recall",
             "Effectively converted audience interest into paying customers"
         ],
-        logo: 'https://placehold.co/150x80/000000/FFFFFF?text=Healthtracka',
+        logo: 'data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="80" viewBox="0 0 150 80"><rect width="150" height="80" fill="%23111827" rx="8"/><text x="75" y="42" text-anchor="middle" dominant-baseline="middle" fill="%23FFD903" font-size="13" font-weight="700" font-family="Inter,sans-serif">Healthtracka</text></svg>',
     },
     {
         id: 'bracken',

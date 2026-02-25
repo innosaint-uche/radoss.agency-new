@@ -53,6 +53,7 @@
   /* GLASSMORPHISM */
   --bg-glass: rgba(2, 4, 8, 0.7);
   --border-light: rgba(255, 255, 255, 0.08);
+  --flywheel-panel-bg: rgba(12, 14, 26, 0.78);
 
   /* SPACING - Swiss Grid */
   --gap: 1px;
@@ -72,6 +73,7 @@
   --bg-card: #ffffff;
   --bg-glass: rgba(255, 255, 255, 0.8);
   --border-light: rgba(0, 0, 0, 0.08);
+  --flywheel-panel-bg: rgba(248, 249, 255, 0.88);
 
   --text-primary: #111827;
   --text-secondary: #4B5563;
