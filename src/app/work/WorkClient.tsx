@@ -177,6 +177,7 @@ export default function Work() {
                                             alt={project.client}
                                             width={150}
                                             height={80}
+                                            unoptimized={true}
                                             style={{ objectFit: 'contain', maxWidth: '80%', maxHeight: '60%' }}
                                         />
                                     </motion.div>
@@ -234,6 +235,7 @@ export default function Work() {
                                         alt={selectedProject.client}
                                         width={120}
                                         height={60}
+                                        unoptimized={true}
                                         style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '100%' }}
                                     />
                                 </motion.div>
