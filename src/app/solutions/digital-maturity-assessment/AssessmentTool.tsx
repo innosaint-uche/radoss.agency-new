@@ -486,7 +486,7 @@ export default function DigitalMaturityAssessment() {
             yPos = (asAnyDoc.lastAutoTable?.finalY ?? yPos) + 8;
         });
 
-        const totalPages = doc.internal.getNumberOfPages();
+        const totalPages = doc.getNumberOfPages();
         for (let i = 1; i <= totalPages; i++) {
             doc.setPage(i);
             addFooter(i, totalPages);
