@@ -9,7 +9,16 @@ from pathlib import Path
 from typing import Protocol
 import xml.etree.ElementTree as ET
 
-from .report import ValidationReport
+import sys
+from pathlib import Path
+
+# Ensure the local directory is in sys.path for robust resolution within hidden folders
+_current_dir = str(Path(__file__).parent)
+if _current_dir not in sys.path:
+    sys.path.insert(0, _current_dir)
+
+import report
+from report import ValidationReport
 
 logger = logging.getLogger(__name__)
 

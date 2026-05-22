@@ -4,8 +4,19 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 import zipfile
 
-from .report import ValidationReport
-from .detectors import (
+import sys
+from pathlib import Path
+
+# Ensure the local directory is in sys.path for robust resolution within hidden folders
+_current_dir = str(Path(__file__).parent)
+if _current_dir not in sys.path:
+    sys.path.insert(0, _current_dir)
+
+import report
+import detectors
+
+from report import ValidationReport
+from detectors import (
     Detector,
     ScanContext,
     GridConsistencyDetector,
