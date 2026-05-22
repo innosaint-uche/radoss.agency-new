@@ -38,6 +38,7 @@ export default function Footer() {
                         </div>
                         <div className={styles.column}>
                             <h4>Solutions</h4>
+                            <Link href="/ai/ai-partners">AI Partners</Link>
                             <Link href="/solutions/radoss-digital">Performance Marketing</Link>
                             <Link href="/solutions/PROGRAMMATIC-DSP">Programmatic DSP</Link>
                             <Link href="/solutions/meta-ads-payment">Pay Meta in Naira</Link>

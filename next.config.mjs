@@ -42,6 +42,15 @@ const nextConfig = {
             }
         ],
     },
+    async redirects() {
+        return [
+            { source: '/ai-partners', destination: '/ai/ai-partners', permanent: true },
+            { source: '/forward-deployed-engineers', destination: '/ai/ai-partners', permanent: true },
+            { source: '/60-day-ai', destination: '/ai/ai-partners', permanent: true },
+            { source: '/ai-consulting', destination: '/ai/ai-partners', permanent: true },
+            { source: '/ai-transformation', destination: '/ai/ai-partners', permanent: true },
+        ];
+    },
     async headers() {
         return [
             {
