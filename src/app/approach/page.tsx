@@ -122,7 +122,7 @@ export default function Approach() {
                             <span className={styles.frameworkLabel}>Strategic Framework</span>
                             <h2 className={styles.frameworkTitle}>M-C-I-A Model</h2>
                             <p className={styles.frameworkText}>
-                                Our proprietary <b>Map, Connect, Implement, Analyse</b> methodology.
+                                Our proprietary <b>Map the Market, Connect with the Consumer, Implement with Impact, Analyse &amp; Adapt</b> methodology.
                                 This strategic flywheel explains how we diagnose market reality, align customer relevance,
                                 execute with precision, and compound learning through data loops.
                             </p>

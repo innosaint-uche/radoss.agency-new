@@ -55,6 +55,12 @@ const solutionsSchema = {
             name: 'Digital Maturity Assessment',
             url: 'https://radoss.agency/solutions/digital-maturity-assessment',
         },
+        {
+            '@type': 'ListItem',
+            position: 5,
+            name: 'Programmatic DSP',
+            url: 'https://radoss.agency/solutions/PROGRAMMATIC-DSP',
+        },
     ],
 };
 
@@ -101,6 +107,13 @@ export default function SolutionsPage() {
                         <span className={styles.number}>04</span>
                         <h2>Digital Maturity Assessment (FREE)</h2>
                         <p>Free strategic diagnostic to benchmark digital capabilities and prioritize transformation initiatives.</p>
+                        <span className={styles.linkArrow}>View Solution &rarr;</span>
+                    </Link>
+
+                    <Link href="/solutions/PROGRAMMATIC-DSP" className={styles.card}>
+                        <span className={styles.number}>05</span>
+                        <h2>Programmatic DSP</h2>
+                        <p>Africa's leading Demand-Side Platform for intelligent, data-driven programmatic advertising and real-time bidding.</p>
                         <span className={styles.linkArrow}>View Solution &rarr;</span>
                     </Link>
                 </div>
