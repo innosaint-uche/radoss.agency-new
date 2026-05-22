@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Pre-commit guard: reject foreign-language contamination in TS/TSX files.
+# Catches the failure mode where an agent writes PHP/Python/Ruby into a
+# Next.js page file. Add patterns here as new failure modes appear.
+
+set -e
+
+# Only inspect staged TS/TSX files
+files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx)$' || true)
+[ -z "$files" ] && exit 0
+
+bad=0
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
+  # PHP open tags
+  if grep -qE '^<\?(php|=)' "$f"; then
+    echo "ERROR: $f starts with PHP tag — TS/TSX file cannot contain PHP." >&2
+    bad=1
+  fi
+  # PHP-only syntax markers
+  if grep -qE '(^|[^A-Za-z_])(curl_setopt|curl_exec|curl_init)\s*\(' "$f"; then
+    echo "ERROR: $f contains PHP cURL calls. TS/TSX should use fetch()." >&2
+    bad=1
+  fi
+  # Python-only syntax markers in TS/TSX
+  if grep -qE '^(def |from .+ import |import [a-z_]+$)' "$f"; then
+    echo "ERROR: $f appears to contain Python syntax." >&2
+    bad=1
+  fi
+  # Page files MUST export a default React component
+  if [[ "$f" == */page.tsx ]] && ! grep -qE 'export default' "$f"; then
+    echo "ERROR: $f is a Next.js page but has no 'export default'." >&2
+    bad=1
+  fi
+done <<< "$files"
+
+if [ "$bad" -ne 0 ]; then
+  echo "" >&2
+  echo "Commit blocked. Run 'git restore <file>' or fix the file, then retry." >&2
+  echo "To bypass intentionally (rarely correct): git commit --no-verify" >&2
+  exit 1
+fi
+exit 0
