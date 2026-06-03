@@ -113,7 +113,7 @@ export default function SolutionsPage() {
                     <Link href="/solutions/PROGRAMMATIC-DSP" className={styles.card}>
                         <span className={styles.number}>05</span>
                         <h2>Programmatic DSP</h2>
-                        <p>Africa's leading Demand-Side Platform for intelligent, data-driven programmatic advertising and real-time bidding.</p>
+                        <p>Africa&apos;s leading Demand-Side Platform for intelligent, data-driven programmatic advertising and real-time bidding.</p>
                         <span className={styles.linkArrow}>View Solution &rarr;</span>
                     </Link>
                 </div>

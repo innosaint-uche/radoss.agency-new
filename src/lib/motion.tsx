@@ -91,7 +91,9 @@ export function useInView<T extends Element>(
 export function useAnimation() {
     return useMemo(
         () => ({
-            start: async (_: unknown) => undefined,
+            start: async (animation: unknown) => {
+                void animation;
+            },
         }),
         []
     );
