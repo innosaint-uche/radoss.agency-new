@@ -61,6 +61,12 @@ const solutionsSchema = {
             name: 'Programmatic DSP',
             url: 'https://radoss.agency/solutions/PROGRAMMATIC-DSP',
         },
+        {
+            '@type': 'ListItem',
+            position: 6,
+            name: 'AI Services & Forward Deployment',
+            url: 'https://radoss.agency/ai',
+        },
     ],
 };
 
@@ -114,6 +120,13 @@ export default function SolutionsPage() {
                         <span className={styles.number}>05</span>
                         <h2>Programmatic DSP</h2>
                         <p>Africa&apos;s leading Demand-Side Platform for intelligent, data-driven programmatic advertising and real-time bidding.</p>
+                        <span className={styles.linkArrow}>View Solution &rarr;</span>
+                    </Link>
+
+                    <Link href="/ai" className={styles.card}>
+                        <span className={styles.number}>06</span>
+                        <h2>AI Services & Forward Deployment</h2>
+                        <p>Forward-deployed AI consulting, AI search optimization (AEO + GEO + LLM SEO), AI implementation, and team training.</p>
                         <span className={styles.linkArrow}>View Solution &rarr;</span>
                     </Link>
                 </div>

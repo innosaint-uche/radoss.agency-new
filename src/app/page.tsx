@@ -230,24 +230,21 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className={styles.bentoGrid}>
+          <div className={styles.solutionsBentoGrid}>
             {/* Performance Marketing */}
             <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
-              <Link href="/solutions/radoss-digital" className={styles.bentoCardLarge}>
-                <div className={styles.cardInfo}>
-                  <div className={styles.cardHeader}>
-                    <span className={styles.cardNum}>01</span>
-                    <h3>Performance Marketing</h3>
-                  </div>
-                  <p>High-ROI acquisition and conversion programs powered by data modeling, creative testing, and channel optimization.</p>
+              <Link href="/solutions/radoss-digital" className={`${styles.bentoCard} ${styles.blueCard}`}>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardNum}>01</span>
+                  <h3>Performance Marketing</h3>
                 </div>
-                <div className={styles.cardArrow}>&rarr;</div>
+                <p>High-ROI acquisition and conversion programs powered by data modeling, creative testing, and channel optimization.</p>
               </Link>
             </motion.div>
 
             {/* Pay Meta in Naira */}
             <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
-              <Link href="/solutions/meta-ads-payment" className={`${styles.bentoCard} ${styles.blueCard}`}>
+              <Link href="/solutions/meta-ads-payment" className={`${styles.bentoCard} ${styles.goldCard}`}>
                 <div className={styles.cardHeader}>
                   <span className={styles.cardNum}>02</span>
                   <h3>Pay Meta in Naira</h3>
@@ -258,7 +255,7 @@ export default function Home() {
 
             {/* WABAR API */}
             <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
-              <Link href="/solutions/wabar-whatsapp-api" className={`${styles.bentoCard} ${styles.goldCard}`}>
+              <Link href="/solutions/wabar-whatsapp-api" className={`${styles.bentoCard} ${styles.sandCard}`}>
                 <div className={styles.cardHeader}>
                   <span className={styles.cardNum}>03</span>
                   <h3>WABAR API</h3>
@@ -269,12 +266,37 @@ export default function Home() {
 
             {/* Digital Maturity */}
             <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
-              <Link href="/solutions/digital-maturity-assessment" className={`${styles.bentoCard} ${styles.sandCard}`}>
+              <Link href="/solutions/digital-maturity-assessment" className={`${styles.bentoCard} ${styles.blueCard}`}>
                 <div className={styles.cardHeader}>
                   <span className={styles.cardNum}>04</span>
                   <h3>Digital Maturity</h3>
                 </div>
                 <p>Assess your digital readiness across strategy, customer experience, operations, and technology.</p>
+              </Link>
+            </motion.div>
+
+            {/* Programmatic DSP */}
+            <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
+              <Link href="/solutions/PROGRAMMATIC-DSP" className={`${styles.bentoCard} ${styles.goldCard}`}>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardNum}>05</span>
+                  <h3>Programmatic DSP</h3>
+                </div>
+                <p>Intelligent, data-driven programmatic advertising and real-time bidding for targeted scale.</p>
+              </Link>
+            </motion.div>
+
+            {/* AI Services */}
+            <motion.div whileHover={{ scale: 1.01 }} className={styles.cardWrapper}>
+              <Link href="/ai" className={`${styles.bentoCardLarge}`}>
+                <div className={styles.cardInfo}>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.cardNum}>06</span>
+                    <h3>AI Services</h3>
+                  </div>
+                  <p>Forward-deployed AI consulting, search optimization (AEO/GEO), implementation & team training.</p>
+                </div>
+                <div className={styles.cardArrow}>&rarr;</div>
               </Link>
             </motion.div>
           </div>

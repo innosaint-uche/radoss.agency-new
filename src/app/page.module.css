@@ -138,6 +138,12 @@
     height: 400px;
 }
 
+.solutionsBentoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
 /* Card Wrapper needed for motion scale context */
 .cardWrapper {
     height: 100%;
@@ -546,7 +552,8 @@
         padding-bottom: 2rem;
     }
 
-    .bentoGrid {
+    .bentoGrid,
+    .solutionsBentoGrid {
         grid-template-columns: 1fr;
         height: auto;
     }
