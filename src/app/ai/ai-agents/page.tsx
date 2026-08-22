@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ServiceSchema from '@/components/ServiceSchema';
+import { ServiceHero, FeatureGrid } from '@/components/ServiceComponents';
+import { SolutionCTA } from '@/components/SolutionCTA';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -22,6 +24,33 @@ export const metadata: Metadata = {
 };
 
 export default function AIAgentsPage() {
+    const features = [
+        {
+            title: "Task Execution",
+            description: "Agents that can autonomously browse the web, scrape data, execute code, and trigger API endpoints to fulfill complex business logic."
+        },
+        {
+            title: "Multi-Agent Orchestration",
+            description: "Deploying specialized agent swarms where a 'Planner' agent delegates sub-tasks to 'Researcher' or 'Executor' agents for parallel processing."
+        },
+        {
+            title: "Contextual Memory",
+            description: "Our agents utilize vector databases (RAG) and structured registries to retain deep contextual knowledge across long-running sessions."
+        },
+        {
+            title: "Strict Access Control",
+            description: "Service-role keys never leave controlled server-side environments. Agents operate under strictly defined Role-Based Access Controls (RBAC)."
+        },
+        {
+            title: "Sandboxed Environments",
+            description: "Code execution and web interactions occur within secure, isolated sandboxes to prevent unauthorized system access."
+        },
+        {
+            title: "Deterministic Outcomes",
+            description: "We impose strict operational protocols to compress ambiguity, reduce hallucination, and guarantee reliable execution paths."
+        }
+    ];
+
     return (
         <div className={styles.container}>
             <ServiceSchema 
@@ -30,47 +59,34 @@ export default function AIAgentsPage() {
                 url="/ai/ai-agents"
                 serviceType="AI Development"
             />
-            <div className={styles.content}>
+            <div className="container" style={{ paddingTop: '2rem' }}>
                 <Breadcrumbs 
                     items={[
                         { name: 'AI', url: '/ai' },
                         { name: 'AI Agents', url: '/ai/ai-agents' }
                     ]} 
                 />
-                
-                <section className={styles.hero}>
-                    <h1 className={styles.title}>AI Agents & Autonomous Systems</h1>
-                    <p className={styles.subtitle}>
-                        Scale your operations with intelligent, task-oriented AI agents that act autonomously to solve complex business problems.
-                    </p>
-                </section>
-                
-                <section className={styles.body}>
-                    <h2>Beyond Chatbots: True Autonomous Execution</h2>
-                    <p>
-                        Chatbots answer questions; <strong>AI Agents take action.</strong> We build, deploy, and monitor task-oriented autonomous systems equipped with specialized tools to execute multi-step workflows, query databases, and operate software just like a human operator.
-                    </p>
-
-                    <h3>1. Autonomous Capabilities</h3>
-                    <ul>
-                        <li><strong>Task Execution:</strong> Agents that can autonomously browse the web, scrape data, execute code, and trigger API endpoints to fulfill complex business logic.</li>
-                        <li><strong>Multi-Agent Orchestration:</strong> Deploying specialized agent swarms where a &quot;Planner&quot; agent delegates sub-tasks to &quot;Researcher&quot; or &quot;Executor&quot; agents for parallel processing.</li>
-                        <li><strong>Contextual Memory:</strong> Our agents utilize vector databases (RAG) and structured registries to retain deep contextual knowledge across long-running sessions.</li>
-                    </ul>
-
-                    <h3>2. Enterprise Security &amp; Guardrails</h3>
-                    <ul>
-                        <li><strong>Strict Access Control:</strong> Service-role keys never leave controlled server-side environments. Agents operate under strictly defined Role-Based Access Controls (RBAC).</li>
-                        <li><strong>Sandboxed Environments:</strong> Code execution and web interactions occur within secure, isolated sandboxes to prevent unauthorized system access.</li>
-                        <li><strong>Deterministic Outcomes:</strong> We impose strict operational protocols to compress ambiguity, reduce hallucination, and guarantee reliable execution paths.</li>
-                    </ul>
-
-                    <h3>3. Deployment Architecture</h3>
-                    <p>
-                        We do not experiment in production. Every agent deployment undergoes staged validation: <strong>Validate &rarr; Stabilise &rarr; Scale &rarr; Optimise</strong>. We ensure your autonomous systems are secure, auditable, and directly tied to your primary revenue engine.
-                    </p>
-                </section>
             </div>
+            
+            <ServiceHero 
+                kicker="True Autonomous Execution"
+                title="AI Agents & Autonomous Systems"
+                subtitle="Scale your operations with intelligent, task-oriented AI agents that act autonomously."
+                description="Chatbots answer questions; AI Agents take action. We build, deploy, and monitor task-oriented autonomous systems equipped with specialized tools to execute multi-step workflows, query databases, and operate software just like a human operator."
+            />
+            
+            <section style={{ padding: '5rem 0' }}>
+                <div className="container">
+                    <FeatureGrid features={features} />
+                </div>
+            </section>
+
+            <SolutionCTA 
+                headline="Deploy agents, not just models."
+                subheadline="Every agent deployment undergoes staged validation: Validate → Stabilise → Scale → Optimise. We ensure your autonomous systems are secure, auditable, and directly tied to your revenue engine."
+                ctaText="Discuss Autonomous Systems"
+                ctaLink="mailto:ai@radoss.agency?subject=AI Agents Enquiry"
+            />
         </div>
     );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ServiceSchema from '@/components/ServiceSchema';
+import { ServiceHero, FeatureGrid } from '@/components/ServiceComponents';
+import { SolutionCTA } from '@/components/SolutionCTA';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -22,6 +24,21 @@ export const metadata: Metadata = {
 };
 
 export default function AIStrategyPage() {
+    const features = [
+        {
+            title: "1. The Strategy Mandate",
+            description: "One clear roadmap mapping constraints, failure modes, and leverage points before code is written. We evaluate the business impact of AI against your operational costs and revenue targets, starting with a Data Maturity Assessment."
+        },
+        {
+            title: "2. Executive Alignment & Governance",
+            description: "Establish strict data privacy, security protocols, and compliance guardrails. We select the right foundation models and orchestration layers to scale securely, and define change management protocols."
+        },
+        {
+            title: "3. Execution & Measurement",
+            description: "Every strategy includes a staged commitment plan: Validate → Stabilise → Scale → Optimise. We establish the launch floor, document RPO/RTO objectives, and define the primary growth engine."
+        }
+    ];
+
     return (
         <div className={styles.container}>
             <ServiceSchema 
@@ -30,47 +47,35 @@ export default function AIStrategyPage() {
                 url="/ai/ai-strategy"
                 serviceType="AI Consulting"
             />
-            <div className={styles.content}>
+            
+            <div className="container" style={{ paddingTop: '2rem' }}>
                 <Breadcrumbs 
                     items={[
                         { name: 'AI', url: '/ai' },
                         { name: 'AI Strategy', url: '/ai/ai-strategy' }
                     ]} 
                 />
-                
-                <section className={styles.hero}>
-                    <h1 className={styles.title}>AI Transformation & Strategy</h1>
-                    <p className={styles.subtitle}>
-                        Define a clear, actionable roadmap for AI adoption that delivers measurable business value and competitive advantage.
-                    </p>
-                </section>
-                
-                <section className={styles.body}>
-                    <h2>Bridge the gap between AI hype and business reality</h2>
-                    <p>
-                        We do not deliver theoretical slide decks. Our AI Strategy consulting applies the <strong>M.C.I.A Framework (Map, Connect, Implement, Analyse)</strong> to identify high-ROI use cases, align intelligent technologies with your core business objectives, and design a governance model built for execution.
-                    </p>
-
-                    <h3>1. The Strategy Mandate</h3>
-                    <ul>
-                        <li><strong>One clear roadmap:</strong> We map constraints, failure modes, and leverage points before you write a single line of code.</li>
-                        <li><strong>Measurable ROI:</strong> We evaluate the business impact of AI adoption against your specific operational costs and revenue targets.</li>
-                        <li><strong>Data Maturity Assessment:</strong> We audit your existing data infrastructure to establish a solid foundation for AI readiness.</li>
-                    </ul>
-
-                    <h3>2. Executive Alignment &amp; Governance</h3>
-                    <ul>
-                        <li><strong>Risk Mitigation:</strong> We establish strict data privacy, security protocols, and compliance guardrails (including LLM bias and hallucination mitigation).</li>
-                        <li><strong>Architecture Planning:</strong> Selecting the right foundation models, vector databases, and orchestration layers to scale securely.</li>
-                        <li><strong>Change Management:</strong> Training your teams and defining clear operational protocols to ensure smooth enterprise adoption.</li>
-                    </ul>
-
-                    <h3>3. Execution &amp; Measurement</h3>
-                    <p>
-                        Every strategy we design includes a staged commitment plan: <strong>Validate &rarr; Stabilise &rarr; Scale &rarr; Optimise</strong>. We establish the launch floor, document recovery objectives (RPO/RTO), and define the primary growth engine before execution begins.
-                    </p>
-                </section>
             </div>
+            
+            <ServiceHero 
+                kicker="Strategic Consulting"
+                title="AI Transformation & Strategy"
+                subtitle="Define a clear, actionable roadmap for AI adoption."
+                description="We do not deliver theoretical slide decks. Our AI Strategy consulting applies the M.C.I.A Framework to identify high-ROI use cases, align intelligent technologies with core business objectives, and design a governance model built for execution."
+            />
+            
+            <section style={{ padding: '5rem 0' }}>
+                <div className="container">
+                    <FeatureGrid features={features} />
+                </div>
+            </section>
+
+            <SolutionCTA 
+                headline="Ready to define your AI roadmap?"
+                subheadline="Get in touch for a strategic consultation on your AI transformation journey."
+                ctaText="Book a Consultation"
+                ctaLink="mailto:ai@radoss.agency?subject=AI Strategy Consultation"
+            />
         </div>
     );
 }
