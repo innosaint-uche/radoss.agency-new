@@ -10,6 +10,7 @@
         "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"
     },
     "dependencies": {
+        "@next/third-parties": "^16.3.2",
         "framer-motion": "^12.29.2",
         "jspdf": "^4.0.0",
         "jspdf-autotable": "^5.0.7",

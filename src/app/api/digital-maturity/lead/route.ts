@@ -233,8 +233,16 @@ async function saveLeadToLark(lead: LeadPayload, businessProfile: BusinessProfil
     }
 
     const token = await getLarkToken();
-    const { tableId, source } = await resolveLarkTableId(token, appToken);
-    const existingFields = await ensureLarkFields(token, appToken, tableId);
+    let tableId = process.env.LARK_TABLE_ID?.trim();
+    let source = 'env_table_id';
+    
+    if (!tableId) {
+        const resolution = await resolveLarkTableId(token, appToken);
+        tableId = resolution.tableId;
+        source = resolution.source;
+    }
+    
+    // Tightened: Skipping the slow ensureLarkFields check since schema is now stable.
     const candidateFields: Record<string, string | number> = {
         'Full name': lead.name,
         'Work email': lead.email,
@@ -254,10 +262,8 @@ async function saveLeadToLark(lead: LeadPayload, businessProfile: BusinessProfil
 
     const fields: Record<string, string | number> = {};
     Object.entries(candidateFields).forEach(([key, value]) => {
-        if (!existingFields.size || existingFields.has(key)) {
-            if (value !== '' && value !== 0) {
-                fields[key] = value;
-            }
+        if (value !== '' && value !== 0) {
+            fields[key] = value;
         }
     });
 

@@ -6,6 +6,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { GoogleTagManager } from '@next/third-parties/google';
 import "./globals.css";
 
 // H1, H2, H3 headings and Logo
@@ -197,6 +198,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning className={`${inter.variable} ${manrope.variable}`}>
             <body suppressHydrationWarning>
                 <SchemaMarkup data={knowledgeGraphSchema} />
+                <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX'} />
                 <ThemeProvider>
                     <SmoothScroll>
                         <InteractiveBackground />
