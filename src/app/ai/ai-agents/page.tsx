@@ -48,7 +48,26 @@ export default function AIAgentsPage() {
                 <section className={styles.body}>
                     <h2>Beyond Chatbots: True Autonomous Execution</h2>
                     <p>
-                        While chatbots respond to queries, AI agents take action. We build specialized agents equipped with tools to browse the web, query databases, execute code, and complete end-to-end workflows without human intervention.
+                        Chatbots answer questions; <strong>AI Agents take action.</strong> We build, deploy, and monitor task-oriented autonomous systems equipped with specialized tools to execute multi-step workflows, query databases, and operate software just like a human operator.
+                    </p>
+
+                    <h3>1. Autonomous Capabilities</h3>
+                    <ul>
+                        <li><strong>Task Execution:</strong> Agents that can autonomously browse the web, scrape data, execute code, and trigger API endpoints to fulfill complex business logic.</li>
+                        <li><strong>Multi-Agent Orchestration:</strong> Deploying specialized agent swarms where a &quot;Planner&quot; agent delegates sub-tasks to &quot;Researcher&quot; or &quot;Executor&quot; agents for parallel processing.</li>
+                        <li><strong>Contextual Memory:</strong> Our agents utilize vector databases (RAG) and structured registries to retain deep contextual knowledge across long-running sessions.</li>
+                    </ul>
+
+                    <h3>2. Enterprise Security &amp; Guardrails</h3>
+                    <ul>
+                        <li><strong>Strict Access Control:</strong> Service-role keys never leave controlled server-side environments. Agents operate under strictly defined Role-Based Access Controls (RBAC).</li>
+                        <li><strong>Sandboxed Environments:</strong> Code execution and web interactions occur within secure, isolated sandboxes to prevent unauthorized system access.</li>
+                        <li><strong>Deterministic Outcomes:</strong> We impose strict operational protocols to compress ambiguity, reduce hallucination, and guarantee reliable execution paths.</li>
+                    </ul>
+
+                    <h3>3. Deployment Architecture</h3>
+                    <p>
+                        We do not experiment in production. Every agent deployment undergoes staged validation: <strong>Validate &rarr; Stabilise &rarr; Scale &rarr; Optimise</strong>. We ensure your autonomous systems are secure, auditable, and directly tied to your primary revenue engine.
                     </p>
                 </section>
             </div>
