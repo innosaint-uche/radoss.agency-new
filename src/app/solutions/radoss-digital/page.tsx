@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ServiceHero, FeatureGrid } from '../../../components/ServiceComponents';
-import SchemaMarkup from '../../../components/SchemaMarkup';
+import Breadcrumbs from '../../../components/Breadcrumbs';
+import ServiceSchema from '../../../components/ServiceSchema';
 import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
@@ -35,20 +36,6 @@ export const metadata: Metadata = {
 };
 
 export default function RadossDigitalPage() {
-    const schemaData = {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Radoss Digital",
-        "description": "Performance marketing solution for organizations that need attributable growth outcomes.",
-        "url": "https://radoss.agency/solutions/radoss-digital",
-        "serviceType": "Performance Marketing",
-        "areaServed": "Global",
-        "provider": {
-            "@type": "Organization",
-            "name": "Radoss Agency"
-        }
-    };
-
     const features = [
         {
             title: "Precision Targeting",
@@ -74,9 +61,25 @@ export default function RadossDigitalPage() {
 
     return (
         <>
-            <SchemaMarkup data={schemaData} />
+            <ServiceSchema 
+                name="Radoss Digital"
+                description="Performance marketing solution for organizations that need attributable growth outcomes."
+                url="/solutions/radoss-digital"
+                serviceType="Performance Marketing"
+                areaServed="Global"
+            />
+            
+            <div className="container" style={{ padding: '20px 0 0' }}>
+                <Breadcrumbs 
+                    items={[
+                        { name: 'Solutions', url: '/solutions' },
+                        { name: 'Radoss Digital', url: '/solutions/radoss-digital' }
+                    ]} 
+                />
+            </div>
 
             <ServiceHero
+
                 kicker="Radoss Digital"
                 title="Performance Marketing"
                 subtitle="Growth, Quantified."

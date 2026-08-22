@@ -67,6 +67,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${baseUrl}/solutions/PROGRAMMATIC-DSP`,
+            lastModified: now,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/solutions/meta-ads-payment`,
             lastModified: now,
             changeFrequency: 'weekly',
@@ -89,6 +95,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: now,
             changeFrequency: 'monthly',
             priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/ai/ai-agents`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/ai/ai-automation`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/ai/ai-strategy`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
         },
         {
             url: `${baseUrl}/ai/ai-partners`,

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ServiceHero, FeatureGrid } from '../../../components/ServiceComponents';
-import SchemaMarkup from '../../../components/SchemaMarkup';
+import Breadcrumbs from '../../../components/Breadcrumbs';
+import ServiceSchema from '../../../components/ServiceSchema';
 import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
@@ -35,20 +36,6 @@ export const metadata: Metadata = {
 };
 
 export default function WabarPage() {
-    const schemaData = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "WABAR by Radoss",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "description": "Enterprise-grade WhatsApp Business API service for automation, support, and commerce use cases.",
-        "url": "https://radoss.agency/solutions/wabar-whatsapp-api",
-        "provider": {
-            "@type": "Organization",
-            "name": "Radoss Agency"
-        }
-    };
-
     const features = [
         {
             title: "Official API Access",
@@ -74,9 +61,25 @@ export default function WabarPage() {
 
     return (
         <>
-            <SchemaMarkup data={schemaData} />
+            <ServiceSchema 
+                name="WABAR by Radoss"
+                description="Enterprise-grade WhatsApp Business API service for automation, support, and commerce use cases."
+                url="/solutions/wabar-whatsapp-api"
+                serviceType="Software Application"
+                areaServed="Global"
+            />
+            
+            <div className="container" style={{ padding: '20px 0 0' }}>
+                <Breadcrumbs 
+                    items={[
+                        { name: 'Solutions', url: '/solutions' },
+                        { name: 'WABAR WhatsApp API', url: '/solutions/wabar-whatsapp-api' }
+                    ]} 
+                />
+            </div>
 
             <ServiceHero
+
                 kicker="WABAR by Radoss"
                 title="Enterprise WhatsApp Solutions"
                 subtitle="Conversational Commerce at Scale."

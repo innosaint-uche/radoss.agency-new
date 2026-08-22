@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import AssessmentTool from './AssessmentTool';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: "Free Digital Maturity Assessment Tool | Radoss Agency",
@@ -82,6 +83,14 @@ export default function Page() {
                     }
                 ]
             }} />
+            <div className="container" style={{ padding: '20px 0 0' }}>
+                <Breadcrumbs 
+                    items={[
+                        { name: 'Solutions', url: '/solutions' },
+                        { name: 'Digital Maturity Assessment', url: '/solutions/digital-maturity-assessment' }
+                    ]} 
+                />
+            </div>
             <AssessmentTool />
         </>
     );

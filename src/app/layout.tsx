@@ -37,6 +37,8 @@ export const metadata: Metadata = {
         "digital performance marketing agency",
         "MarTech strategy and implementation",
         "brand and traditional marketing services",
+        "AI",
+        "Artificial Intelligence Consulting",
         "Radoss Agency",
     ],
     alternates: {
@@ -49,6 +51,20 @@ export const metadata: Metadata = {
         siteName: "Radoss Agency",
         locale: "en_NG",
         type: "website",
+        images: [
+            {
+                url: "/favicon.png",
+                width: 512,
+                height: 512,
+                alt: "Radoss Agency Favicon",
+            },
+            {
+                url: "/favicon-32.png",
+                width: 32,
+                height: 32,
+                alt: "Radoss Agency Logo",
+            }
+        ]
     },
     twitter: {
         card: "summary_large_image",
@@ -92,16 +108,36 @@ export default function RootLayout({
                 "description": "Radoss Agency connects business strategy, marketing execution, and technology systems to unlock measurable growth.",
                 "email": "hello@radoss.agency",
                 "telephone": "+2347033827657",
+                "foundingDate": "2020",
+                "sameAs": [
+                    "https://www.linkedin.com/company/radoss-digital/",
+                    "https://twitter.com/radossagency",
+                    "https://www.instagram.com/radoss.agency"
+                ],
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Lagos",
                     "addressCountry": "NG"
                 },
+                "areaServed": [
+                    { "@type": "Country", "name": "NG" },
+                    { "@type": "Country", "name": "GB" },
+                    { "@type": "Country", "name": "US" }
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Business Transformation & Digital Marketing Services",
+                    "itemListElement": [
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Marketing" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Programmatic DSP" } }
+                    ]
+                },
                 "founder": {
-                    "@id": "https://radoss.agency/#uchenna-innocent"
+                    "@id": "https://uchennainnocent.com"
                 },
                 "member": [
-                    { "@id": "https://radoss.agency/#uchenna-innocent" },
+                    { "@id": "https://uchennainnocent.com" },
                     { "@id": "https://radoss.agency/#timi-uk" },
                     { "@id": "https://radoss.agency/#ebere-agbaje" }
                 ],
@@ -111,12 +147,14 @@ export default function RootLayout({
                     "Brand strategy",
                     "Marketing technology",
                     "WhatsApp Business API",
-                    "Meta advertising strategy"
+                    "Meta advertising strategy",
+                    "AI Strategy",
+                    "AI Agents"
                 ]
             },
             {
                 "@type": "Person",
-                "@id": "https://radoss.agency/#uchenna-innocent",
+                "@id": "https://uchennainnocent.com",
                 "name": "Uchenna Innocent",
                 "jobTitle": "Chief Digital Architect & Founder",
                 "worksFor": { "@id": "https://radoss.agency/#organization" },

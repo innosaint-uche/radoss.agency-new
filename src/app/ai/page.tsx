@@ -2,26 +2,26 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: 'AI Services — Consulting, Implementation & Optimization',
     description:
-        'Radoss AI services: forward-deployed AI consulting, AI search optimization (AEO + GEO + LLM SEO), AI implementation, and AI training. Ship real AI in production in 60 days.',
+        'Radoss AI services: AI Strategy, AI Agents, Enterprise AI Automation, and AI Partners. Ship real AI in production in 60 days.',
     keywords: [
         'AI consulting Nigeria',
         'AI services Africa',
-        'AI search optimization',
-        'answer engine optimization',
-        'generative engine optimization',
+        'AI strategy consulting',
+        'AI agents development',
+        'Enterprise AI automation',
         'AI implementation agency',
-        'AI training for teams',
         'Forward Deployed Engineers',
         'Radoss AI',
     ],
     alternates: { canonical: 'https://radoss.agency/ai' },
     openGraph: {
         title: 'AI Services — Radoss Agency',
-        description: 'Forward-deployed AI consulting, AI search optimization, implementation, and training.',
+        description: 'AI Strategy, AI Agents, Enterprise AI Automation, and AI Partners.',
         url: 'https://radoss.agency/ai',
         siteName: 'Radoss Agency',
         locale: 'en_NG',
@@ -44,30 +44,21 @@ const hubSchema = {
         {
             '@type': 'ListItem',
             position: 2,
-            name: 'AI Search Optimization (AEO + GEO + LLM SEO)',
-            url: 'https://radoss.agency/ai/ai-search-optimization',
+            name: 'AI Strategy & Transformation',
+            url: 'https://radoss.agency/ai/ai-strategy',
         },
         {
             '@type': 'ListItem',
             position: 3,
-            name: 'AI Implementation',
-            url: 'https://radoss.agency/ai/ai-implementation',
+            name: 'AI Agents & Autonomous Systems',
+            url: 'https://radoss.agency/ai/ai-agents',
         },
         {
             '@type': 'ListItem',
             position: 4,
-            name: 'AI Training',
-            url: 'https://radoss.agency/ai/ai-training',
+            name: 'Enterprise AI Automation',
+            url: 'https://radoss.agency/ai/ai-automation',
         },
-    ],
-};
-
-const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://radoss.agency/' },
-        { '@type': 'ListItem', position: 2, name: 'AI', item: 'https://radoss.agency/ai' },
     ],
 };
 
@@ -75,9 +66,14 @@ export default function AIHubPage() {
     return (
         <main className={styles.main}>
             <SchemaMarkup data={hubSchema} />
-            <SchemaMarkup data={breadcrumbSchema} />
 
             <div className="container">
+                <Breadcrumbs 
+                    items={[
+                        { name: 'AI', url: '/ai' }
+                    ]} 
+                />
+                
                 <header className={styles.header}>
                     <span className={styles.eyebrow}>AI Services</span>
                     <h1 className={styles.title}>
@@ -87,7 +83,7 @@ export default function AIHubPage() {
                     <p className={styles.intro}>
                         Forward Deployed Engineers, AI Product Leaders, and an integrated strategy practice — built
                         to take enterprise AI from deck to deployment. Choose the engagement that matches where you
-                        are: full transformation, search visibility, focused implementation, or team upskilling.
+                        are: full transformation, autonomous agents, workflow automation, or strategic consulting.
                     </p>
                 </header>
 
@@ -102,37 +98,38 @@ export default function AIHubPage() {
                         <span className={styles.linkArrow}>Explore →</span>
                     </Link>
 
-                    <div className={styles.cardDisabled} aria-disabled="true">
+                    <Link href="/ai/ai-strategy" className={styles.card}>
                         <span className={styles.number}>02</span>
-                        <h2>AI Search Optimization</h2>
+                        <h2>AI Strategy</h2>
                         <p>
-                            Rank where AI sends buyers next. AEO + GEO + LLM SEO for ChatGPT, Google AI Overviews,
-                            Perplexity, and Claude citations.
+                            Bridge the gap between AI hype and business reality. We align intelligent technologies 
+                            with your core business objectives for measurable ROI.
                         </p>
-                        <span className={styles.comingSoon}>Coming soon</span>
-                    </div>
+                        <span className={styles.linkArrow}>Explore →</span>
+                    </Link>
 
-                    <div className={styles.cardDisabled} aria-disabled="true">
+                    <Link href="/ai/ai-agents" className={styles.card}>
                         <span className={styles.number}>03</span>
-                        <h2>AI Implementation</h2>
+                        <h2>AI Agents</h2>
                         <p>
-                            Standalone build engagement. We embed our Forward Deployed Engineers into your team to
-                            ship a specific AI capability inside your stack and governance posture.
+                            Deploy custom AI Agents that autonomously execute complex business workflows, 
+                            from customer support to data analysis.
                         </p>
-                        <span className={styles.comingSoon}>Coming soon</span>
-                    </div>
+                        <span className={styles.linkArrow}>Explore →</span>
+                    </Link>
 
-                    <div className={styles.cardDisabled} aria-disabled="true">
+                    <Link href="/ai/ai-automation" className={styles.card}>
                         <span className={styles.number}>04</span>
-                        <h2>AI Training</h2>
+                        <h2>AI Automation</h2>
                         <p>
-                            Customised programs led by AI Product Leaders. Strategy for executives, agent
-                            development for builders, prompt engineering by role, evaluation & quality control.
+                            Transform manual processes into high-speed workflows. We embed intelligent automation 
+                            directly into your operations to accelerate delivery.
                         </p>
-                        <span className={styles.comingSoon}>Coming soon</span>
-                    </div>
+                        <span className={styles.linkArrow}>Explore →</span>
+                    </Link>
                 </div>
             </div>
         </main>
     );
 }
+

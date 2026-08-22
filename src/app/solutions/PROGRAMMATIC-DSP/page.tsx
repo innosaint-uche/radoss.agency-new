@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ServiceHero, FeatureGrid } from '../../../components/ServiceComponents';
-import SchemaMarkup from '../../../components/SchemaMarkup';
+import Breadcrumbs from '../../../components/Breadcrumbs';
+import ServiceSchema from '../../../components/ServiceSchema';
 import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
@@ -35,20 +36,6 @@ export const metadata: Metadata = {
 };
 
 export default function ProgrammaticDSPPage() {
-    const schemaData = {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Radoss Programmatic DSP",
-        "description": "Enterprise Demand-Side Platform offering programmatic advertising, real-time bidding, and vast publisher inventory across Africa.",
-        "url": "https://radoss.agency/solutions/PROGRAMMATIC-DSP",
-        "serviceType": "Programmatic Advertising Tech",
-        "areaServed": "Africa",
-        "provider": {
-            "@type": "Organization",
-            "name": "Radoss Agency"
-        }
-    };
-
     const features = [
         {
             title: "Real-Time Bidding",
@@ -74,9 +61,25 @@ export default function ProgrammaticDSPPage() {
 
     return (
         <>
-            <SchemaMarkup data={schemaData} />
+            <ServiceSchema 
+                name="Radoss Programmatic DSP"
+                description="Enterprise Demand-Side Platform offering programmatic advertising, real-time bidding, and vast publisher inventory across Africa."
+                url="/solutions/PROGRAMMATIC-DSP"
+                serviceType="Programmatic Advertising Tech"
+                areaServed="Africa"
+            />
+            
+            <div className="container" style={{ padding: '20px 0 0' }}>
+                <Breadcrumbs 
+                    items={[
+                        { name: 'Solutions', url: '/solutions' },
+                        { name: 'Programmatic DSP', url: '/solutions/PROGRAMMATIC-DSP' }
+                    ]} 
+                />
+            </div>
 
             <ServiceHero
+
                 kicker="Radoss DSP"
                 title="Programmatic Advertising"
                 subtitle="Africa's Intelligent Platform."

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ServiceHero, FeatureGrid } from '../../../components/ServiceComponents';
-import SchemaMarkup from '../../../components/SchemaMarkup';
+import Breadcrumbs from '../../../components/Breadcrumbs';
+import ServiceSchema from '../../../components/ServiceSchema';
 import { SolutionCTA } from '../../../components/SolutionCTA';
 
 export const metadata: Metadata = {
@@ -35,23 +36,6 @@ export const metadata: Metadata = {
 };
 
 export default function MetaAdsPaymentPage() {
-    const schemaData = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Meta Ads Naira Payment Service",
-        "description": "Service enabling Nigerian businesses to pay for Meta (Facebook/Instagram) advertising in local currency (Naira).",
-        "url": "https://radoss.agency/solutions/meta-ads-payment",
-        "brand": {
-            "@type": "Brand",
-            "name": "Radoss Agency"
-        },
-        "offers": {
-            "@type": "Offer",
-            "priceCurrency": "NGN",
-            "availability": "https://schema.org/InStock"
-        }
-    };
-
     const features = [
         {
             title: "No Dollar Limits",
@@ -77,9 +61,25 @@ export default function MetaAdsPaymentPage() {
 
     return (
         <>
-            <SchemaMarkup data={schemaData} />
+            <ServiceSchema 
+                name="Meta Ads Naira Payment Service"
+                description="Service enabling Nigerian businesses to pay for Meta (Facebook/Instagram) advertising in local currency (Naira)."
+                url="/solutions/meta-ads-payment"
+                serviceType="Payment Service"
+                areaServed="Nigeria"
+            />
+
+            <div className="container" style={{ padding: '20px 0 0' }}>
+                <Breadcrumbs 
+                    items={[
+                        { name: 'Solutions', url: '/solutions' },
+                        { name: 'Meta Ads Payment', url: '/solutions/meta-ads-payment' }
+                    ]} 
+                />
+            </div>
 
             <ServiceHero
+
                 kicker="Meta Business Partner"
                 title="Pay Meta Ads in Naira"
                 subtitle="Advertise Globally. Pay Locally."
