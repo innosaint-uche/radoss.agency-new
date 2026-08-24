@@ -82,10 +82,12 @@ export default function AIAutomationPage() {
             </section>
 
             <SolutionCTA 
-                headline="Ready to accelerate your operations?"
-                subheadline="By offloading routine cognitive tasks to AI pipelines, your team reclaims thousands of hours to focus on strategic growth."
-                ctaText="Discuss Workflow Automation"
-                ctaLink="mailto:ai@radoss.agency?subject=AI Workflow Automation Enquiry"
+                title="Ready to accelerate your operations?"
+                description="By offloading routine cognitive tasks to AI pipelines, your team reclaims thousands of hours to focus on strategic growth."
+                mainCTA={{
+                    label: "Discuss Workflow Automation",
+                    href: "mailto:ai@radoss.agency?subject=AI Workflow Automation Enquiry"
+                }}
             />
         </div>
     );

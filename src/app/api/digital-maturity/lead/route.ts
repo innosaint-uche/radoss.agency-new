@@ -186,41 +186,6 @@ async function resolveLarkTableId(token: string, appToken: string) {
     };
 }
 
-async function ensureLarkFields(token: string, appToken: string, tableId: string) {
-    let fields = await getLarkTableFieldNames(token, appToken, tableId);
-    const missing = LARK_REQUIRED_FIELDS.filter((field) => !fields.has(field.name));
-
-    for (const field of missing) {
-        try {
-            const response = await fetch(
-                `${LARK_OPEN_API}/bitable/v1/apps/${encodeURIComponent(appToken)}/tables/${encodeURIComponent(tableId)}/fields`,
-                {
-                    method: 'POST',
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        field_name: field.name,
-                        type: field.type,
-                    }),
-                },
-            );
-
-            await parseLarkResponse(response);
-        } catch (error) {
-            const message = error instanceof Error ? error.message : 'Unknown error';
-            if (!/duplicate|exists|already/i.test(message)) {
-                throw error;
-            }
-        }
-    }
-
-    if (missing.length > 0) {
-        fields = await getLarkTableFieldNames(token, appToken, tableId);
-    }
-    return fields;
-}
 
 async function saveLeadToLark(lead: LeadPayload, businessProfile: BusinessProfilePayload, results: ResultsPayload, submittedAt: string) {
     const appToken = process.env.LARK_APP_TOKEN?.trim();

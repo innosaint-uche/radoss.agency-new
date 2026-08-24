@@ -71,10 +71,12 @@ export default function AIStrategyPage() {
             </section>
 
             <SolutionCTA 
-                headline="Ready to define your AI roadmap?"
-                subheadline="Get in touch for a strategic consultation on your AI transformation journey."
-                ctaText="Book a Consultation"
-                ctaLink="mailto:ai@radoss.agency?subject=AI Strategy Consultation"
+                title="Ready to define your AI roadmap?"
+                description="Get in touch for a strategic consultation on your AI transformation journey."
+                mainCTA={{
+                    label: "Book a Consultation",
+                    href: "mailto:ai@radoss.agency?subject=AI Strategy Consultation"
+                }}
             />
         </div>
     );
