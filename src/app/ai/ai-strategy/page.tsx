@@ -75,7 +75,7 @@ export default function AIStrategyPage() {
                 description="Get in touch for a strategic consultation on your AI transformation journey."
                 mainCTA={{
                     label: "Book a Consultation",
-                    href: "mailto:ai@radoss.agency?subject=AI Strategy Consultation"
+                    href: "mailto:hello@radoss.agency?subject=AI Strategy Consultation"
                 }}
             />
         </div>

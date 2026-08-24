@@ -86,7 +86,7 @@ export default function AIAgentsPage() {
                 description="Every agent deployment undergoes staged validation: Validate → Stabilise → Scale → Optimise. We ensure your autonomous systems are secure, auditable, and directly tied to your revenue engine."
                 mainCTA={{
                     label: "Discuss Autonomous Systems",
-                    href: "mailto:ai@radoss.agency?subject=AI Agents Enquiry"
+                    href: "mailto:hello@radoss.agency?subject=AI Agents Enquiry"
                 }}
             />
         </div>

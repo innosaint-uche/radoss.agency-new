@@ -86,7 +86,7 @@ export default function AIAutomationPage() {
                 description="By offloading routine cognitive tasks to AI pipelines, your team reclaims thousands of hours to focus on strategic growth."
                 mainCTA={{
                     label: "Discuss Workflow Automation",
-                    href: "mailto:ai@radoss.agency?subject=AI Workflow Automation Enquiry"
+                    href: "mailto:hello@radoss.agency?subject=AI Workflow Automation Enquiry"
                 }}
             />
         </div>
