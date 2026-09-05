@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
     try {
@@ -12,19 +14,9 @@ export async function POST(request: Request) {
             );
         }
 
-        const transporter = nodemailer.createTransport({
-            host: process.env.AWS_SES_HOST,
-            port: Number(process.env.AWS_SES_PORT),
-            secure: false, // true for 465, false for other ports
-            auth: {
-                user: process.env.AWS_SES_USERNAME,
-                pass: process.env.AWS_SES_PASSWORD,
-            },
-        });
-
-        const mailOptions = {
+        const data = await resend.emails.send({
             from: process.env.MAIL_FROM_ADDRESS || 'hello@radoss.agency',
-            to: process.env.MAIL_TO_ADDRESS || process.env.MAIL_FROM_ADDRESS || 'hello@radoss.agency', // Sending to self for now, or configurable
+            to: process.env.MAIL_TO_ADDRESS || process.env.MAIL_FROM_ADDRESS || 'hello@radoss.agency',
             replyTo: email,
             subject: `New Contact Form Submission from ${name}`,
             text: `
@@ -41,12 +33,18 @@ ${message}
 <p><strong>Message:</strong></p>
 <p>${message.replace(/\n/g, '<br>')}</p>
             `,
-        };
+        });
 
-        await transporter.sendMail(mailOptions);
+        if (data.error) {
+            console.error('Resend API Error:', data.error);
+            return NextResponse.json(
+                { error: 'Failed to send email via Resend' },
+                { status: 500 }
+            );
+        }
 
         return NextResponse.json(
-            { message: 'Email sent successfully' },
+            { message: 'Email sent successfully', data },
             { status: 200 }
         );
     } catch (error) {
@@ -57,3 +55,4 @@ ${message}
         );
     }
 }
+
