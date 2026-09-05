@@ -23,8 +23,8 @@ export async function POST(request: Request) {
         });
 
         const mailOptions = {
-            from: process.env.MAIL_FROM_ADDRESS || 'hello@radossdigital.com',
-            to: process.env.MAIL_FROM_ADDRESS || 'hello@radossdigital.com', // Sending to self for now, or configurable
+            from: process.env.MAIL_FROM_ADDRESS || 'hello@radoss.agency',
+            to: process.env.MAIL_TO_ADDRESS || process.env.MAIL_FROM_ADDRESS || 'hello@radoss.agency', // Sending to self for now, or configurable
             replyTo: email,
             subject: `New Contact Form Submission from ${name}`,
             text: `

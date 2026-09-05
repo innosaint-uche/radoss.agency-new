@@ -30,7 +30,7 @@ const projects: Project[] = [
             "Target: Minimum 2,000 new customer accounts",
             "Result: Average 750 naira per new account opening"
         ],
-        logo: 'https://beyondlimits.global/zenithbankpitchcompetition/wp-content/uploads/2024/11/zenith.png',
+        logo: 'data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="80" viewBox="0 0 150 80"><rect width="150" height="80" fill="%23111827" rx="8"/><text x="75" y="42" text-anchor="middle" dominant-baseline="middle" fill="%23ffffff" font-size="14" font-weight="700" font-family="Inter,sans-serif">Zenith Bank</text></svg>',
     },
     {
         id: 'eatalia',
